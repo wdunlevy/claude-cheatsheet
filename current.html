@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Claude Code — Complete Reference</title>
+<style>
+  @page { size: letter; margin: 0.25in 0.25in 0.2in 0.25in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, 'Helvetica Neue', sans-serif; font-size: 7pt; color: #1a1a1a; line-height: 1.25; }
+
+  /* Top grid: title in col1, content starts at top in cols 2-3 */
+  .top-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 8px; }
+  .col { display: flex; flex-direction: column; gap: 4px; }
+
+  h1 { font-size: 12pt; margin-bottom: 1px; color: #333; }
+  .subtitle { font-size: 6pt; color: #888; margin-bottom: 2px; }
+  .legend { font-size: 6pt; margin-bottom: 4px; line-height: 1.6; }
+  .legend span { display: inline-flex; align-items: center; gap: 2px; margin-right: 6px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .dot.create { background: #c0392b; }
+  .dot.validate { background: #27ae60; }
+  .dot.ship { background: #2980b9; }
+  .dot.noncode { background: #999; }
+
+  .section { margin-bottom: 4px; border: 1px solid #ddd; border-radius: 3px; padding: 3px 4px; background: #fafafa; }
+  .section h2 { font-size: 7pt; color: #fff; margin: -3px -4px 2px -4px; padding: 2px 4px; border-radius: 2px 2px 0 0; letter-spacing: 0.3px; text-transform: uppercase; font-weight: 700; }
+  .cat-workflow h2 { background: #d4764e; }
+  .cat-git h2 { background: #4a7c59; }
+  .cat-quality h2 { background: #5b6abf; }
+  .cat-creative h2 { background: #9b59b6; }
+  .cat-project h2 { background: #d4764e; }
+  .cat-setup h2 { background: #7f8c8d; }
+  .cat-auto h2 { background: #2c8c99; }
+  .cat-session h2 { background: #34495e; }
+  .cat-nav h2 { background: #6c5b7b; }
+  .cat-info h2 { background: #8e735b; }
+  .cat-ext h2 { background: #546e7a; }
+  .cat-deprecated h2 { background: #bbb; }
+  .sk { display: flex; align-items: baseline; gap: 2px; margin-bottom: 1.5px; }
+  .sk .dot { margin-top: 1px; align-self: flex-start; }
+  .sk-body { flex: 1; }
+  .sk-name { font-family: 'SF Mono', 'Menlo', monospace; font-size: 6.5pt; font-weight: 600; }
+  .sk-name.create { color: #c0392b; }
+  .sk-name.validate { color: #27ae60; }
+  .sk-name.ship { color: #2980b9; }
+  .sk-name.noncode { color: #777; }
+  .sk-desc { font-size: 6pt; color: #666; }
+  .note { font-size: 5.5pt; color: #888; font-style: italic; }
+
+  /* Bottom sections */
+  .bottom-strip { border: 1px solid #ddd; border-radius: 3px; padding: 3px 5px; background: #fafafa; margin-top: 4px; }
+  .bottom-strip h2 { font-size: 7.5pt; color: #fff; margin: -3px -5px 3px -5px; padding: 2px 5px; border-radius: 2px 2px 0 0; letter-spacing: 0.3px; text-transform: uppercase; font-weight: 700; }
+  .kb-head { background: #2c3e50; }
+  .cli-head { background: #1a5276; }
+  .bottom-cols { columns: 3; column-gap: 12px; }
+  .kb { margin-bottom: 2px; font-size: 7pt; }
+  .kb-key { font-family: 'SF Mono', 'Menlo', monospace; font-size: 6.5pt; font-weight: 600; color: #c0392b; background: #f5f0eb; padding: 0 2px; border-radius: 2px; border: 1px solid #ddd; }
+  .kb-desc { color: #555; font-size: 6.5pt; }
+  .cli-item { margin-bottom: 2px; font-size: 7pt; }
+  .cli-flag { font-family: 'SF Mono', 'Menlo', monospace; font-size: 6.5pt; font-weight: 600; color: #1a5276; }
+  .cli-desc { color: #555; font-size: 6.5pt; }
+  .cli-sub { font-family: 'SF Mono', 'Menlo', monospace; font-size: 6.5pt; font-weight: 600; color: #6c3483; }
+  .footer { text-align: center; font-size: 5.5pt; color: #aaa; margin-top: 3px; }
+</style>
+</head>
+<body>
+
+<div class="top-grid">
+
+<!-- ═══════════ COLUMN 1 ═══════════ -->
+<div class="col">
+
+<!-- Title block lives in column 1 only -->
+<div>
+<h1>Claude Code</h1>
+<div style="font-size: 9pt; font-weight: 600; color: #555; margin-bottom: 2px;">Complete Reference</div>
+<div class="subtitle">Skills · commands · keys · CLI &nbsp;·&nbsp; March 2026 · v2.1.x</div>
+<div class="legend">
+  <span><span class="dot create"></span> Create</span>
+  <span><span class="dot validate"></span> Validate</span>
+  <span><span class="dot ship"></span> Ship</span>
+  <span><span class="dot noncode"></span> Non-code</span>
+</div>
+</div>
+
+<div class="section cat-workflow">
+<h2>Superpowers — Workflow</h2>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/using-superpowers</span> <span class="sk-desc">Discover available skills</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/brainstorming</span> <span class="sk-desc">Creative exploration before code</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/writing-plans</span> <span class="sk-desc">Implementation plans from specs</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/writing-skills</span> <span class="sk-desc">Create or edit CC skills</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/receiving-code-review</span> <span class="sk-desc">Handle review feedback</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/requesting-code-review</span> <span class="sk-desc">Request review of work</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/systematic-debugging</span> <span class="sk-desc">Structured bug investigation</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/test-driven-development</span> <span class="sk-desc">Tests before implementation</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/verification-before-completion</span> <span class="sk-desc">Verify before claiming done</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/dispatching-parallel-agents</span> <span class="sk-desc">Run 2+ tasks concurrently</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/executing-plans</span> <span class="sk-desc">Execute plan task-by-task</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/finishing-a-development-branch</span> <span class="sk-desc">Merge, PR, keep, or discard</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/subagent-driven-development</span> <span class="sk-desc">Parallel subagent execution</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/using-git-worktrees</span> <span class="sk-desc">Isolated worktree setup</span></div></div>
+</div>
+
+<div class="section cat-git">
+<h2>Git &amp; PR</h2>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/code-review</span> <span class="sk-desc">Code review a PR</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/review-pr</span> <span class="sk-desc">Multi-agent PR review</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/clean_gone</span> <span class="sk-desc">Clean deleted remote branches</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/commit</span> <span class="sk-desc">Git commit (conventional msg)</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/commit-push-pr</span> <span class="sk-desc">Commit + push + open PR</span></div></div>
+</div>
+
+<div class="section cat-quality">
+<h2>Code Quality</h2>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/feature-dev</span> <span class="sk-desc">Guided feature dev + architecture</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/claude-md-improver</span> <span class="sk-desc">Audit CLAUDE.md quality</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/revise-claude-md</span> <span class="sk-desc">Update CLAUDE.md from session</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/simplify</span> <span class="sk-desc">Review code for reuse &amp; clarity</span></div></div>
+</div>
+
+<div class="section cat-creative">
+<h2>Creative &amp; Design</h2>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/frontend-design</span> <span class="sk-desc">Production-grade frontend UI</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/playground</span> <span class="sk-desc">Interactive HTML explorers</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/skill-creator</span> <span class="sk-desc">Create &amp; benchmark skills</span></div></div>
+</div>
+
+</div><!-- end col 1 -->
+
+<!-- ═══════════ COLUMN 2 ═══════════ -->
+<div class="col">
+
+<div class="section cat-project">
+<h2>Project-Specific (gen5-mobile)</h2>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/cursor</span> <span class="sk-desc">Open Cursor IDE for cwd</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/da-module</span> <span class="sk-desc">Port MSSQL → mobile SQLite</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/devctl-ops</span> <span class="sk-desc">Extend devctl.sh</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/doc-gen</span> <span class="sk-desc">Generate m1mobile page docs</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/gen5-plan</span> <span class="sk-desc">Plan from tech reference doc</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/accessibility-lint</span> <span class="sk-desc">Scan missing testID/a11y</span></div></div>
+<div class="sk"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/electron-verify</span> <span class="sk-desc">Verify Electron changes</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/sync-trees</span> <span class="sk-desc">Sync worktrees + diff report</span></div></div>
+</div>
+
+<div class="section cat-setup">
+<h2>Setup &amp; Config</h2>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/claude-automation-recommender</span> <span class="sk-desc">Recommend automations</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/keybindings-help</span> <span class="sk-desc">Customize shortcuts</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/update-config</span> <span class="sk-desc">Edit settings.json / hooks</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/claude-api</span> <span class="sk-desc">Build with Claude API / SDK</span></div></div>
+<div class="sk"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/new-sdk-app</span> <span class="sk-desc">Create Agent SDK app</span></div></div>
+</div>
+
+<div class="section cat-auto">
+<h2>Automation</h2>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/loop</span> <span class="sk-desc">Recurring prompt interval</span></div></div>
+<div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/schedule</span> <span class="sk-desc">Cron-scheduled remote agents</span></div></div>
+</div>
+
+<div class="section cat-session">
+<h2>Session &amp; Context</h2>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/add-dir</span> <span class="sk-desc">Add working directory</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/branch</span> <span class="sk-desc">Fork conversation (/fork)</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/btw</span> <span class="sk-desc">Side question mid-response</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/clear</span> <span class="sk-desc">Clear &amp; start fresh</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/compact</span> <span class="sk-desc">Summarize to free context</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/memory</span> <span class="sk-desc">View/edit persistent memory</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/plan</span> <span class="sk-desc">Enter plan mode</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/rename</span> <span class="sk-desc">Name current session</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/resume</span> <span class="sk-desc">Resume previous conversation</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/rewind</span> <span class="sk-desc">Undo code changes</span></div></div>
+</div>
+
+<div class="section cat-deprecated">
+<h2>Deprecated</h2>
+<div class="note">/execute-plan → /executing-plans · /write-plan → /writing-plans · /brainstorm → /brainstorming · /output-style → /config</div>
+</div>
+
+</div><!-- end col 2 -->
+
+<!-- ═══════════ COLUMN 3 ═══════════ -->
+<div class="col">
+
+<div class="section cat-nav">
+<h2>Model &amp; Output</h2>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/color</span> <span class="sk-desc">Prompt bar color</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/config</span> <span class="sk-desc">Settings (/settings)</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/copy</span> <span class="sk-desc">Copy response / code blocks</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/effort</span> <span class="sk-desc">Thinking effort (○ ◐ ●)</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/export</span> <span class="sk-desc">Export conversation</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/fast</span> <span class="sk-desc">Toggle fast mode</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/model</span> <span class="sk-desc">Switch model</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/theme</span> <span class="sk-desc">Color theme</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/voice</span> <span class="sk-desc">Voice input (push-to-talk)</span></div></div>
+</div>
+
+<div class="section cat-info">
+<h2>Info &amp; Diagnostics</h2>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/context</span> <span class="sk-desc">Context window breakdown</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/cost</span> <span class="sk-desc">Session cost &amp; tokens</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/debug</span> <span class="sk-desc">Debug current session</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/doctor</span> <span class="sk-desc">Config &amp; env diagnostics</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/feedback</span> <span class="sk-desc">Submit feedback</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/help</span> <span class="sk-desc">Show help</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/release-notes</span> <span class="sk-desc">View release notes</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/stats</span> <span class="sk-desc">Personal usage stats</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/status</span> <span class="sk-desc">System &amp; account status</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/usage</span> <span class="sk-desc">Plan usage limits</span></div></div>
+</div>
+
+<div class="section cat-ext">
+<h2>Extensions &amp; Integrations</h2>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/agents</span> <span class="sk-desc">List agents</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/extra-usage</span> <span class="sk-desc">Purchase extra usage</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/ide</span> <span class="sk-desc">IDE extension</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/mcp</span> <span class="sk-desc">MCP servers</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/permissions</span> <span class="sk-desc">Tool permission rules</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/plugins</span> <span class="sk-desc">Plugin management</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/remote-control</span> <span class="sk-desc">Bridge to claude.ai/code</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/sandbox</span> <span class="sk-desc">Bash sandboxing</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/skills</span> <span class="sk-desc">List skills</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/terminal-setup</span> <span class="sk-desc">Terminal integration</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/todos</span> <span class="sk-desc">Current todo items</span></div></div>
+<div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/upgrade</span> <span class="sk-desc">Switch to Max plan</span></div></div>
+</div>
+
+</div><!-- end col 3 -->
+
+</div><!-- end top-grid -->
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- KEYBOARD SHORTCUTS -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="bottom-strip">
+<h2 class="kb-head">Keyboard Shortcuts</h2>
+<div class="bottom-cols">
+<div class="kb"><span class="kb-key">!</span> <span class="kb-desc">Bash mode (shell commands)</span></div>
+<div class="kb"><span class="kb-key">/</span> <span class="kb-desc">Slash commands &amp; skills</span></div>
+<div class="kb"><span class="kb-key">@</span> <span class="kb-desc">File paths, agents, MCP resources</span></div>
+<div class="kb"><span class="kb-key">&amp;</span> <span class="kb-desc">Send to background agent</span></div>
+<div class="kb"><span class="kb-key">Shift+↵</span> <span class="kb-desc">Insert newline in prompt</span></div>
+<div class="kb"><span class="kb-key">Tab</span> <span class="kb-desc">Autocomplete file / command</span></div>
+<div class="kb"><span class="kb-key">↑ / ↓</span> <span class="kb-desc">Cycle prompt history</span></div>
+<div class="kb"><span class="kb-key">Esc</span> <span class="kb-desc">Interrupt (2× to clear input)</span></div>
+<div class="kb"><span class="kb-key">Ctrl+U</span> <span class="kb-desc">Clear input line</span></div>
+<div class="kb"><span class="kb-key">Ctrl+K</span> <span class="kb-desc">Cut to end of line</span></div>
+<div class="kb"><span class="kb-key">Ctrl+Y</span> <span class="kb-desc">Yank (paste cut text)</span></div>
+<div class="kb"><span class="kb-key">Alt+Y</span> <span class="kb-desc">Yank-pop (cycle kill ring)</span></div>
+<div class="kb"><span class="kb-key">Shift+Tab</span> <span class="kb-desc">Toggle auto-accept edits</span></div>
+<div class="kb"><span class="kb-key">Ctrl+O</span> <span class="kb-desc">Transcript / verbose output</span></div>
+<div class="kb"><span class="kb-key">Ctrl+R</span> <span class="kb-desc">History search (bash-style)</span></div>
+<div class="kb"><span class="kb-key">Ctrl+S</span> <span class="kb-desc">Stash prompt (save for later)</span></div>
+<div class="kb"><span class="kb-key">Ctrl+G</span> <span class="kb-desc">Edit prompt in $EDITOR</span></div>
+<div class="kb"><span class="kb-key">Ctrl+X Ctrl+E</span> <span class="kb-desc">Edit in $EDITOR (alt)</span></div>
+<div class="kb"><span class="kb-key">Ctrl+L</span> <span class="kb-desc">Clear screen &amp; redraw</span></div>
+<div class="kb"><span class="kb-key">Ctrl+Z</span> <span class="kb-desc">Suspend (fg to resume)</span></div>
+<div class="kb"><span class="kb-key">Ctrl+_</span> <span class="kb-desc">Undo prompt input</span></div>
+<div class="kb"><span class="kb-key">Alt+P</span> <span class="kb-desc">Switch model (while typing)</span></div>
+<div class="kb"><span class="kb-key">Alt+O</span> <span class="kb-desc">Toggle fast mode</span></div>
+<div class="kb"><span class="kb-key">Alt+T</span> <span class="kb-desc">Toggle thinking mode</span></div>
+<div class="kb"><span class="kb-key">Ctrl+V</span> <span class="kb-desc">Paste images from clipboard</span></div>
+<div class="kb"><span class="kb-key">Ctrl+B</span> <span class="kb-desc">Background running task</span></div>
+<div class="kb"><span class="kb-key">Ctrl+X Ctrl+K</span> <span class="kb-desc">Kill all background agents</span></div>
+<div class="kb"><span class="kb-key">Shift+↓</span> <span class="kb-desc">Expand teammate pane</span></div>
+<div class="kb"><span class="kb-key">Space</span> <span class="kb-desc">Push-to-talk (voice mode)</span></div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- CLI FLAGS & SUBCOMMANDS -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<div class="bottom-strip">
+<h2 class="cli-head">CLI — <span style="font-weight:400">claude [options] [prompt]</span></h2>
+<div class="bottom-cols">
+<div class="cli-item"><span class="cli-flag">-p, --print</span> <span class="cli-desc">Non-interactive output (pipes)</span></div>
+<div class="cli-item"><span class="cli-flag">-c, --continue</span> <span class="cli-desc">Continue last conversation</span></div>
+<div class="cli-item"><span class="cli-flag">-r, --resume [id]</span> <span class="cli-desc">Resume by session ID</span></div>
+<div class="cli-item"><span class="cli-flag">-w, --worktree [name]</span> <span class="cli-desc">Isolated git worktree</span></div>
+<div class="cli-item"><span class="cli-flag">-n, --name &lt;name&gt;</span> <span class="cli-desc">Set session display name</span></div>
+<div class="cli-item"><span class="cli-flag">--model &lt;model&gt;</span> <span class="cli-desc">opus / sonnet / haiku</span></div>
+<div class="cli-item"><span class="cli-flag">--effort &lt;level&gt;</span> <span class="cli-desc">low / medium / high</span></div>
+<div class="cli-item"><span class="cli-flag">--agent &lt;agent&gt;</span> <span class="cli-desc">Use specific agent</span></div>
+<div class="cli-item"><span class="cli-flag">--chrome</span> <span class="cli-desc">Enable Chrome integration</span></div>
+<div class="cli-item"><span class="cli-flag">--add-dir &lt;dirs&gt;</span> <span class="cli-desc">Additional directories</span></div>
+<div class="cli-item"><span class="cli-flag">--system-prompt &lt;text&gt;</span> <span class="cli-desc">Override system prompt</span></div>
+<div class="cli-item"><span class="cli-flag">--append-system-prompt</span> <span class="cli-desc">Append to system prompt</span></div>
+<div class="cli-item"><span class="cli-flag">--settings &lt;file|json&gt;</span> <span class="cli-desc">Load settings</span></div>
+<div class="cli-item"><span class="cli-flag">--mcp-config &lt;files&gt;</span> <span class="cli-desc">MCP server configs</span></div>
+<div class="cli-item"><span class="cli-flag">--plugin-dir &lt;path&gt;</span> <span class="cli-desc">Load plugins from dir</span></div>
+<div class="cli-item"><span class="cli-flag">--tools &lt;tools&gt;</span> <span class="cli-desc">Restrict available tools</span></div>
+<div class="cli-item"><span class="cli-flag">--permission-mode &lt;m&gt;</span> <span class="cli-desc">default / plan / auto / …</span></div>
+<div class="cli-item"><span class="cli-flag">--dangerously-skip-permissions</span> <span class="cli-desc">Bypass checks</span></div>
+<div class="cli-item"><span class="cli-flag">--bare</span> <span class="cli-desc">Minimal mode (no hooks/LSP)</span></div>
+<div class="cli-item"><span class="cli-flag">--output-format &lt;fmt&gt;</span> <span class="cli-desc">text / json / stream-json</span></div>
+<div class="cli-item"><span class="cli-flag">--json-schema &lt;schema&gt;</span> <span class="cli-desc">Structured output</span></div>
+<div class="cli-item"><span class="cli-flag">--max-budget-usd &lt;$&gt;</span> <span class="cli-desc">Spending cap</span></div>
+<div class="cli-item"><span class="cli-flag">--from-pr [pr]</span> <span class="cli-desc">Resume PR-linked session</span></div>
+<div class="cli-item"><span class="cli-flag">--fork-session</span> <span class="cli-desc">New ID when resuming</span></div>
+<div class="cli-item"><span class="cli-flag">--tmux</span> <span class="cli-desc">tmux session (with -w)</span></div>
+<div class="cli-item"><span class="cli-flag">-d, --debug</span> <span class="cli-desc">Debug mode</span></div>
+<div class="cli-item"><span class="cli-flag">-v, --version</span> <span class="cli-desc">Show version</span></div>
+<div style="margin-top: 3px; border-top: 1px dotted #ccc; padding-top: 3px;">
+<div class="cli-item"><span class="cli-sub">claude auth</span> <span class="cli-desc">login / status / logout</span></div>
+<div class="cli-item"><span class="cli-sub">claude doctor</span> <span class="cli-desc">Health check</span></div>
+<div class="cli-item"><span class="cli-sub">claude mcp</span> <span class="cli-desc">add / remove / list servers</span></div>
+<div class="cli-item"><span class="cli-sub">claude plugin</span> <span class="cli-desc">install / enable / disable</span></div>
+<div class="cli-item"><span class="cli-sub">claude install</span> <span class="cli-desc">Install native build</span></div>
+<div class="cli-item"><span class="cli-sub">claude update</span> <span class="cli-desc">Check &amp; install updates</span></div>
+</div>
+</div>
+</div>
+
+<div class="footer">
+  <b style="color:#c0392b">●</b> Create &nbsp;
+  <b style="color:#27ae60">●</b> Validate &nbsp;
+  <b style="color:#2980b9">●</b> Ship &nbsp;
+  <b style="color:#999">●</b> Non-code &nbsp;·&nbsp;
+  ~80 commands · 29 shortcuts · 28 CLI flags · 6 subcommands
+</div>
+</body>
+</html>
