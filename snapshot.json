@@ -25,6 +25,7 @@
     { "name": "/simplify", "category": "Code Quality", "color": "validate", "desc": "Review code for reuse & clarity" },
     { "name": "/frontend-design", "category": "Creative", "color": "create", "desc": "Production-grade frontend UI" },
     { "name": "/playground", "category": "Creative", "color": "create", "desc": "Interactive HTML explorers" },
+    { "name": "/skill-creator", "category": "Creative", "color": "create", "desc": "Create & benchmark skills" },
     { "name": "/cursor", "category": "Project", "color": "noncode", "desc": "Open Cursor IDE for cwd" },
     { "name": "/da-module", "category": "Project", "color": "create", "desc": "Port MSSQL → mobile SQLite" },
     { "name": "/devctl-ops", "category": "Project", "color": "create", "desc": "Extend devctl.sh" },
@@ -39,13 +40,15 @@
     { "name": "/claude-api", "category": "Setup", "color": "create", "desc": "Build with Claude API / SDK" },
     { "name": "/new-sdk-app", "category": "Setup", "color": "create", "desc": "Create Agent SDK app" },
     { "name": "/loop", "category": "Automation", "color": "ship", "desc": "Recurring prompt interval" },
+    { "name": "/schedule", "category": "Automation", "color": "ship", "desc": "Cron-scheduled remote agents" },
+    { "name": "/cheatsheet", "category": "Info", "color": "noncode", "desc": "Generate reference PDF" }
   ],
   "commands": [
     "/add-dir", "/agents", "/branch", "/btw", "/clear", "/color", "/compact",
     "/config", "/context", "/copy", "/cost", "/debug", "/doctor", "/effort",
     "/export", "/extra-usage", "/fast", "/feedback", "/help", "/ide", "/mcp",
     "/memory", "/model", "/permissions", "/plan", "/plugins", "/release-notes",
-    "/remote-control", "/rename", "/resume", "/sandbox", "/skills",
+    "/remote-control", "/rename", "/resume", "/rewind", "/sandbox", "/skills",
     "/stats", "/status", "/terminal-setup", "/theme", "/todos", "/upgrade",
     "/usage", "/voice"
   ],
@@ -54,13 +57,13 @@
     "Ctrl+U", "Ctrl+K", "Ctrl+Y", "Alt+Y", "Shift+Tab", "Ctrl+O",
     "Ctrl+R", "Ctrl+S", "Ctrl+G", "Ctrl+X Ctrl+E", "Ctrl+L", "Ctrl+Z",
     "Ctrl+_", "Alt+P", "Alt+O", "Alt+T", "Ctrl+V", "Ctrl+B",
-    "Shift+↓", "Space"
+    "Ctrl+X Ctrl+K", "Shift+↓", "Space"
   ],
   "cliFlags": [
     "-p", "-c", "-r", "-w", "-n", "--model", "--effort", "--agent",
     "--chrome", "--add-dir", "--system-prompt", "--append-system-prompt",
     "--settings", "--mcp-config", "--plugin-dir", "--tools",
-    "--permission-mode", "--dangerously-skip-permissions",
+    "--permission-mode", "--dangerously-skip-permissions", "--bare",
     "--output-format", "--json-schema", "--max-budget-usd", "--from-pr",
     "--fork-session", "--tmux", "-d", "-v"
   ],
