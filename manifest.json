@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
-  "lastGenerated": "2026-03-25T20:00:00Z",
-  "note": "Added /cheatsheet skill; fixed snapshot.json sync"
+  "version": "1.3",
+  "lastGenerated": "2026-03-26T12:00:00Z",
+  "note": "Removed /doc-gen, /gen5-plan, /sync-trees (deleted from project)"
 }

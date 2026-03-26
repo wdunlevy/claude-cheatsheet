@@ -1,74 +1,349 @@
 {
   "skills": [
-    { "name": "/brainstorming", "category": "Superpowers", "color": "create", "desc": "Creative exploration before code" },
-    { "name": "/writing-plans", "category": "Superpowers", "color": "create", "desc": "Implementation plans from specs" },
-    { "name": "/writing-skills", "category": "Superpowers", "color": "create", "desc": "Create or edit CC skills" },
-    { "name": "/receiving-code-review", "category": "Superpowers", "color": "validate", "desc": "Handle review feedback" },
-    { "name": "/requesting-code-review", "category": "Superpowers", "color": "validate", "desc": "Request review of work" },
-    { "name": "/systematic-debugging", "category": "Superpowers", "color": "validate", "desc": "Structured bug investigation" },
-    { "name": "/test-driven-development", "category": "Superpowers", "color": "validate", "desc": "Tests before implementation" },
-    { "name": "/verification-before-completion", "category": "Superpowers", "color": "validate", "desc": "Verify before claiming done" },
-    { "name": "/dispatching-parallel-agents", "category": "Superpowers", "color": "ship", "desc": "Run 2+ tasks concurrently" },
-    { "name": "/executing-plans", "category": "Superpowers", "color": "ship", "desc": "Execute plan task-by-task" },
-    { "name": "/finishing-a-development-branch", "category": "Superpowers", "color": "ship", "desc": "Merge, PR, keep, or discard" },
-    { "name": "/subagent-driven-development", "category": "Superpowers", "color": "ship", "desc": "Parallel subagent execution" },
-    { "name": "/using-git-worktrees", "category": "Superpowers", "color": "ship", "desc": "Isolated worktree setup" },
-    { "name": "/using-superpowers", "category": "Superpowers", "color": "noncode", "desc": "Discover available skills" },
-    { "name": "/code-review", "category": "Git & PR", "color": "validate", "desc": "Code review a PR" },
-    { "name": "/review-pr", "category": "Git & PR", "color": "validate", "desc": "Multi-agent PR review" },
-    { "name": "/clean_gone", "category": "Git & PR", "color": "ship", "desc": "Clean deleted remote branches" },
-    { "name": "/commit", "category": "Git & PR", "color": "ship", "desc": "Git commit (conventional msg)" },
-    { "name": "/commit-push-pr", "category": "Git & PR", "color": "ship", "desc": "Commit + push + open PR" },
-    { "name": "/feature-dev", "category": "Code Quality", "color": "create", "desc": "Guided feature dev + architecture" },
-    { "name": "/claude-md-improver", "category": "Code Quality", "color": "validate", "desc": "Audit CLAUDE.md quality" },
-    { "name": "/revise-claude-md", "category": "Code Quality", "color": "validate", "desc": "Update CLAUDE.md from session" },
-    { "name": "/simplify", "category": "Code Quality", "color": "validate", "desc": "Review code for reuse & clarity" },
-    { "name": "/frontend-design", "category": "Creative", "color": "create", "desc": "Production-grade frontend UI" },
-    { "name": "/playground", "category": "Creative", "color": "create", "desc": "Interactive HTML explorers" },
-    { "name": "/skill-creator", "category": "Creative", "color": "create", "desc": "Create & benchmark skills" },
-    { "name": "/cursor", "category": "Project", "color": "noncode", "desc": "Open Cursor IDE for cwd" },
-    { "name": "/da-module", "category": "Project", "color": "create", "desc": "Port MSSQL → mobile SQLite" },
-    { "name": "/devctl-ops", "category": "Project", "color": "create", "desc": "Extend devctl.sh" },
-    { "name": "/doc-gen", "category": "Project", "color": "create", "desc": "Generate m1mobile page docs" },
-    { "name": "/gen5-plan", "category": "Project", "color": "create", "desc": "Plan from tech reference doc" },
-    { "name": "/accessibility-lint", "category": "Project", "color": "validate", "desc": "Scan missing testID/a11y" },
-    { "name": "/electron-verify", "category": "Project", "color": "validate", "desc": "Verify Electron changes" },
-    { "name": "/sync-trees", "category": "Project", "color": "ship", "desc": "Sync worktrees + diff report" },
-    { "name": "/claude-automation-recommender", "category": "Setup", "color": "noncode", "desc": "Recommend automations" },
-    { "name": "/keybindings-help", "category": "Setup", "color": "noncode", "desc": "Customize shortcuts" },
-    { "name": "/update-config", "category": "Setup", "color": "noncode", "desc": "Edit settings.json / hooks" },
-    { "name": "/claude-api", "category": "Setup", "color": "create", "desc": "Build with Claude API / SDK" },
-    { "name": "/new-sdk-app", "category": "Setup", "color": "create", "desc": "Create Agent SDK app" },
-    { "name": "/loop", "category": "Automation", "color": "ship", "desc": "Recurring prompt interval" },
-    { "name": "/schedule", "category": "Automation", "color": "ship", "desc": "Cron-scheduled remote agents" },
-    { "name": "/cheatsheet", "category": "Info", "color": "noncode", "desc": "Generate reference PDF" }
+    {
+      "name": "/brainstorming",
+      "category": "Superpowers",
+      "color": "create",
+      "desc": "Creative exploration before code"
+    },
+    {
+      "name": "/writing-plans",
+      "category": "Superpowers",
+      "color": "create",
+      "desc": "Implementation plans from specs"
+    },
+    {
+      "name": "/writing-skills",
+      "category": "Superpowers",
+      "color": "create",
+      "desc": "Create or edit CC skills"
+    },
+    {
+      "name": "/receiving-code-review",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Handle review feedback"
+    },
+    {
+      "name": "/requesting-code-review",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Request review of work"
+    },
+    {
+      "name": "/systematic-debugging",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Structured bug investigation"
+    },
+    {
+      "name": "/test-driven-development",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Tests before implementation"
+    },
+    {
+      "name": "/verification-before-completion",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Verify before claiming done"
+    },
+    {
+      "name": "/dispatching-parallel-agents",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Run 2+ tasks concurrently"
+    },
+    {
+      "name": "/executing-plans",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Execute plan task-by-task"
+    },
+    {
+      "name": "/finishing-a-development-branch",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Merge, PR, keep, or discard"
+    },
+    {
+      "name": "/subagent-driven-development",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Parallel subagent execution"
+    },
+    {
+      "name": "/using-git-worktrees",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Isolated worktree setup"
+    },
+    {
+      "name": "/using-superpowers",
+      "category": "Superpowers",
+      "color": "noncode",
+      "desc": "Discover available skills"
+    },
+    {
+      "name": "/code-review",
+      "category": "Git & PR",
+      "color": "validate",
+      "desc": "Code review a PR"
+    },
+    {
+      "name": "/review-pr",
+      "category": "Git & PR",
+      "color": "validate",
+      "desc": "Multi-agent PR review"
+    },
+    {
+      "name": "/clean_gone",
+      "category": "Git & PR",
+      "color": "ship",
+      "desc": "Clean deleted remote branches"
+    },
+    {
+      "name": "/commit",
+      "category": "Git & PR",
+      "color": "ship",
+      "desc": "Git commit (conventional msg)"
+    },
+    {
+      "name": "/commit-push-pr",
+      "category": "Git & PR",
+      "color": "ship",
+      "desc": "Commit + push + open PR"
+    },
+    {
+      "name": "/feature-dev",
+      "category": "Code Quality",
+      "color": "create",
+      "desc": "Guided feature dev + architecture"
+    },
+    {
+      "name": "/claude-md-improver",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Audit CLAUDE.md quality"
+    },
+    {
+      "name": "/revise-claude-md",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Update CLAUDE.md from session"
+    },
+    {
+      "name": "/simplify",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Review code for reuse & clarity"
+    },
+    {
+      "name": "/frontend-design",
+      "category": "Creative",
+      "color": "create",
+      "desc": "Production-grade frontend UI"
+    },
+    {
+      "name": "/playground",
+      "category": "Creative",
+      "color": "create",
+      "desc": "Interactive HTML explorers"
+    },
+    {
+      "name": "/skill-creator",
+      "category": "Creative",
+      "color": "create",
+      "desc": "Create & benchmark skills"
+    },
+    {
+      "name": "/cursor",
+      "category": "Project",
+      "color": "noncode",
+      "desc": "Open Cursor IDE for cwd"
+    },
+    {
+      "name": "/da-module",
+      "category": "Project",
+      "color": "create",
+      "desc": "Port MSSQL \u2192 mobile SQLite"
+    },
+    {
+      "name": "/devctl-ops",
+      "category": "Project",
+      "color": "create",
+      "desc": "Extend devctl.sh"
+    },
+    {
+      "name": "/accessibility-lint",
+      "category": "Project",
+      "color": "validate",
+      "desc": "Scan missing testID/a11y"
+    },
+    {
+      "name": "/electron-verify",
+      "category": "Project",
+      "color": "validate",
+      "desc": "Verify Electron changes"
+    },
+    {
+      "name": "/claude-automation-recommender",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Recommend automations"
+    },
+    {
+      "name": "/keybindings-help",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Customize shortcuts"
+    },
+    {
+      "name": "/update-config",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Edit settings.json / hooks"
+    },
+    {
+      "name": "/claude-api",
+      "category": "Setup",
+      "color": "create",
+      "desc": "Build with Claude API / SDK"
+    },
+    {
+      "name": "/new-sdk-app",
+      "category": "Setup",
+      "color": "create",
+      "desc": "Create Agent SDK app"
+    },
+    {
+      "name": "/loop",
+      "category": "Automation",
+      "color": "ship",
+      "desc": "Recurring prompt interval"
+    },
+    {
+      "name": "/schedule",
+      "category": "Automation",
+      "color": "ship",
+      "desc": "Cron-scheduled remote agents"
+    },
+    {
+      "name": "/cheatsheet",
+      "category": "Info",
+      "color": "noncode",
+      "desc": "Generate reference PDF"
+    }
   ],
   "commands": [
-    "/add-dir", "/agents", "/branch", "/btw", "/clear", "/color", "/compact",
-    "/config", "/context", "/copy", "/cost", "/debug", "/doctor", "/effort",
-    "/export", "/extra-usage", "/fast", "/feedback", "/help", "/ide", "/mcp",
-    "/memory", "/model", "/permissions", "/plan", "/plugins", "/release-notes",
-    "/remote-control", "/rename", "/resume", "/rewind", "/sandbox", "/skills",
-    "/stats", "/status", "/terminal-setup", "/theme", "/todos", "/upgrade",
-    "/usage", "/voice"
+    "/add-dir",
+    "/agents",
+    "/branch",
+    "/btw",
+    "/clear",
+    "/color",
+    "/compact",
+    "/config",
+    "/context",
+    "/copy",
+    "/cost",
+    "/debug",
+    "/doctor",
+    "/effort",
+    "/export",
+    "/extra-usage",
+    "/fast",
+    "/feedback",
+    "/help",
+    "/ide",
+    "/mcp",
+    "/memory",
+    "/model",
+    "/permissions",
+    "/plan",
+    "/plugins",
+    "/release-notes",
+    "/remote-control",
+    "/rename",
+    "/resume",
+    "/rewind",
+    "/sandbox",
+    "/skills",
+    "/stats",
+    "/status",
+    "/terminal-setup",
+    "/theme",
+    "/todos",
+    "/upgrade",
+    "/usage",
+    "/voice"
   ],
   "shortcuts": [
-    "!", "/", "@", "&", "Shift+↵", "Tab", "↑ / ↓", "Esc",
-    "Ctrl+U", "Ctrl+K", "Ctrl+Y", "Alt+Y", "Shift+Tab", "Ctrl+O",
-    "Ctrl+R", "Ctrl+S", "Ctrl+G", "Ctrl+X Ctrl+E", "Ctrl+L", "Ctrl+Z",
-    "Ctrl+_", "Alt+P", "Alt+O", "Alt+T", "Ctrl+V", "Ctrl+B",
-    "Ctrl+X Ctrl+K", "Shift+↓", "Space"
+    "!",
+    "/",
+    "@",
+    "&",
+    "Shift+\u21b5",
+    "Tab",
+    "\u2191 / \u2193",
+    "Esc",
+    "Ctrl+U",
+    "Ctrl+K",
+    "Ctrl+Y",
+    "Alt+Y",
+    "Shift+Tab",
+    "Ctrl+O",
+    "Ctrl+R",
+    "Ctrl+S",
+    "Ctrl+G",
+    "Ctrl+X Ctrl+E",
+    "Ctrl+L",
+    "Ctrl+Z",
+    "Ctrl+_",
+    "Alt+P",
+    "Alt+O",
+    "Alt+T",
+    "Ctrl+V",
+    "Ctrl+B",
+    "Ctrl+X Ctrl+K",
+    "Shift+\u2193",
+    "Space"
   ],
   "cliFlags": [
-    "-p", "-c", "-r", "-w", "-n", "--model", "--effort", "--agent",
-    "--chrome", "--add-dir", "--system-prompt", "--append-system-prompt",
-    "--settings", "--mcp-config", "--plugin-dir", "--tools",
-    "--permission-mode", "--dangerously-skip-permissions", "--bare",
-    "--output-format", "--json-schema", "--max-budget-usd", "--from-pr",
-    "--fork-session", "--tmux", "-d", "-v"
+    "-p",
+    "-c",
+    "-r",
+    "-w",
+    "-n",
+    "--model",
+    "--effort",
+    "--agent",
+    "--chrome",
+    "--add-dir",
+    "--system-prompt",
+    "--append-system-prompt",
+    "--settings",
+    "--mcp-config",
+    "--plugin-dir",
+    "--tools",
+    "--permission-mode",
+    "--dangerously-skip-permissions",
+    "--bare",
+    "--output-format",
+    "--json-schema",
+    "--max-budget-usd",
+    "--from-pr",
+    "--fork-session",
+    "--tmux",
+    "-d",
+    "-v"
   ],
   "cliSubcommands": [
-    "claude auth", "claude doctor", "claude mcp", "claude plugin",
-    "claude install", "claude update"
+    "claude auth",
+    "claude doctor",
+    "claude mcp",
+    "claude plugin",
+    "claude install",
+    "claude update"
   ]
 }
