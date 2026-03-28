@@ -163,30 +163,6 @@
       "desc": "Open Cursor IDE for cwd"
     },
     {
-      "name": "/da-module",
-      "category": "Project",
-      "color": "create",
-      "desc": "Port MSSQL \u2192 mobile SQLite"
-    },
-    {
-      "name": "/devctl-ops",
-      "category": "Project",
-      "color": "create",
-      "desc": "Extend devctl.sh"
-    },
-    {
-      "name": "/accessibility-lint",
-      "category": "Project",
-      "color": "validate",
-      "desc": "Scan missing testID/a11y"
-    },
-    {
-      "name": "/electron-verify",
-      "category": "Project",
-      "color": "validate",
-      "desc": "Verify Electron changes"
-    },
-    {
       "name": "/claude-automation-recommender",
       "category": "Setup",
       "color": "noncode",
