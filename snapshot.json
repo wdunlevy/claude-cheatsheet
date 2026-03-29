@@ -209,6 +209,78 @@
       "category": "Info",
       "color": "noncode",
       "desc": "Generate reference PDF"
+    },
+    {
+      "name": "/remember",
+      "category": "Info",
+      "color": "noncode",
+      "desc": "Save session state"
+    },
+    {
+      "name": "/allium",
+      "category": "Allium",
+      "color": "noncode",
+      "desc": "LLM-native spec language"
+    },
+    {
+      "name": "/allium:distill",
+      "category": "Allium",
+      "color": "create",
+      "desc": "Extract spec from code"
+    },
+    {
+      "name": "/allium:elicit",
+      "category": "Allium",
+      "color": "create",
+      "desc": "Discovery session → spec"
+    },
+    {
+      "name": "/allium:propagate",
+      "category": "Allium",
+      "color": "validate",
+      "desc": "Generate tests from spec"
+    },
+    {
+      "name": "/mintlify",
+      "category": "Extensions",
+      "color": "create",
+      "desc": "Build Mintlify docs"
+    },
+    {
+      "name": "/sg-file",
+      "category": "Extensions",
+      "color": "noncode",
+      "desc": "Read Sourcegraph file"
+    },
+    {
+      "name": "/sg-search",
+      "category": "Extensions",
+      "color": "noncode",
+      "desc": "Search Sourcegraph"
+    },
+    {
+      "name": "/imessage:configure",
+      "category": "Extensions",
+      "color": "noncode",
+      "desc": "iMessage channel setup"
+    },
+    {
+      "name": "/imessage:access",
+      "category": "Extensions",
+      "color": "noncode",
+      "desc": "iMessage access policy"
+    },
+    {
+      "name": "/data-engineering",
+      "category": "Data Engineering",
+      "color": "compact",
+      "desc": "22 skills: warehouse-init, analyzing-data, airflow, authoring-dags, debugging-dags, testing-dags, deploying-airflow, airflow-hitl, airflow-plugins, cosmos-dbt-core, cosmos-dbt-fusion, checking-freshness, profiling-tables, tracing-upstream-lineage, tracing-downstream-lineage, annotating-task-lineage, creating-openlineage-extractors, setting-up-astro-project, managing-astro-local-env, managing-astro-deployments, troubleshooting-astro-deployments, migrating-airflow-2-to-3"
+    },
+    {
+      "name": "/fiftyone",
+      "category": "FiftyOne",
+      "color": "compact",
+      "desc": "14 skills: quickstart, help, develop-plugin, dataset-curation, dataset-export, dataset-import, dataset-inference, model-evaluation, find-duplicates, embeddings-visualization, create-notebook, code-style, voodo-design, troubleshoot, issue-triage"
     }
   ],
   "commands": [
@@ -259,9 +331,9 @@
     "/",
     "@",
     "&",
-    "Shift+\u21b5",
+    "Shift+↵",
     "Tab",
-    "\u2191 / \u2193",
+    "↑ / ↓",
     "Esc",
     "Ctrl+U",
     "Ctrl+K",
@@ -282,7 +354,7 @@
     "Ctrl+V",
     "Ctrl+B",
     "Ctrl+X Ctrl+K",
-    "Shift+\u2193",
+    "Shift+↓",
     "Space"
   ],
   "cliFlags": [

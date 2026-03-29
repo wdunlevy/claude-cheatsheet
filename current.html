@@ -32,8 +32,11 @@
   .cat-info h2 { background: #8e735b; }
   .cat-ext h2 { background: #546e7a; }
   .cat-deprecated h2 { background: #bbb; }
+  .cat-allium h2 { background: #8b7355; }
+  .cat-dataeng h2 { background: #1e7e34; }
+  .cat-cv h2 { background: #7d3c98; }
   .sk { display: flex; align-items: baseline; gap: 2px; margin-bottom: 1.5px; }
-  .sk.new, .kb.new, .cli-item.new { background: #fff3cd; border-radius: 2px; padding: 0 2px; margin-left: -2px; margin-right: -2px; }
+  .sk.new, .kb.new, .cli-item.new, .note.new { background: #fff3cd; border-radius: 2px; padding: 0 2px; margin-left: -2px; margin-right: -2px; }
   .sk .dot { margin-top: 1px; align-self: flex-start; }
   .sk-body { flex: 1; }
   .sk-name { font-family: 'SF Mono', 'Menlo', monospace; font-size: 6.5pt; font-weight: 600; }
@@ -65,7 +68,8 @@
 <div>
 <h1>Claude Code</h1>
 <div style="font-size: 9pt; font-weight: 600; color: #555; margin-bottom: 2px;">Complete Reference</div>
-<div class="subtitle">Skills · commands · keys · CLI &nbsp;·&nbsp; March 2026 · v1.5</div>
+<div class="subtitle">Skills · commands · keys · CLI &nbsp;·&nbsp; v1.6 · 2026-03-29 12:00</div>
+<div style="font-size: 5.5pt; color: #888; margin-bottom: 2px;"><a href="https://github.com/wdunlevy/claude-cheatsheet" style="color: #888; text-decoration: none;">github.com/wdunlevy/claude-cheatsheet</a></div>
 <div class="legend">
   <span><span class="dot create"></span> Create</span>
   <span><span class="dot validate"></span> Validate</span>
@@ -131,6 +135,17 @@
 <div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/loop</span> <span class="sk-desc">Recurring prompt interval</span></div></div>
 <div class="sk"><span class="dot ship"></span><div class="sk-body"><span class="sk-name ship">/schedule</span> <span class="sk-desc">Cron-scheduled remote agents</span></div></div>
 </div>
+<div class="section cat-allium">
+<h2>Allium</h2>
+<div class="sk new"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/allium</span> <span class="sk-desc">LLM-native spec language</span></div></div>
+<div class="sk new"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/allium:distill</span> <span class="sk-desc">Extract spec from code</span></div></div>
+<div class="sk new"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/allium:elicit</span> <span class="sk-desc">Discovery session → spec</span></div></div>
+<div class="sk new"><span class="dot validate"></span><div class="sk-body"><span class="sk-name validate">/allium:propagate</span> <span class="sk-desc">Generate tests from spec</span></div></div>
+</div>
+<div class="section cat-dataeng">
+<h2>Data Engineering <span style="font-weight:400;font-size:5.5pt">(22 skills)</span></h2>
+<div class="note new">warehouse-init · analyzing-data · airflow · authoring-dags · debugging-dags · testing-dags · deploying-airflow · airflow-hitl · airflow-plugins · cosmos-dbt-core · cosmos-dbt-fusion · checking-freshness · profiling-tables · tracing-upstream-lineage · tracing-downstream-lineage · annotating-task-lineage · creating-openlineage-extractors · setting-up-astro-project · managing-astro-local-env · managing-astro-deployments · troubleshooting-astro-deployments · migrating-airflow-2-to-3</div>
+</div>
 <div class="section cat-session">
 <h2>Session &amp; Context</h2>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/add-dir</span> <span class="sk-desc">Add working directory</span></div></div>
@@ -173,6 +188,7 @@
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/feedback</span> <span class="sk-desc">Submit feedback</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/help</span> <span class="sk-desc">Show help</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/release-notes</span> <span class="sk-desc">View release notes</span></div></div>
+<div class="sk new"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/remember</span> <span class="sk-desc">Save session state</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/stats</span> <span class="sk-desc">Personal usage stats</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/status</span> <span class="sk-desc">System &amp; account status</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/usage</span> <span class="sk-desc">Plan usage limits</span></div></div>
@@ -182,15 +198,24 @@
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/agents</span> <span class="sk-desc">List agents</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/extra-usage</span> <span class="sk-desc">Purchase extra usage</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/ide</span> <span class="sk-desc">IDE extension</span></div></div>
+<div class="sk new"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/imessage:access</span> <span class="sk-desc">iMessage access policy</span></div></div>
+<div class="sk new"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/imessage:configure</span> <span class="sk-desc">iMessage channel setup</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/mcp</span> <span class="sk-desc">MCP servers</span></div></div>
+<div class="sk new"><span class="dot create"></span><div class="sk-body"><span class="sk-name create">/mintlify</span> <span class="sk-desc">Build Mintlify docs</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/permissions</span> <span class="sk-desc">Tool permission rules</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/plugins</span> <span class="sk-desc">Plugin management</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/remote-control</span> <span class="sk-desc">Bridge to claude.ai/code</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/sandbox</span> <span class="sk-desc">Bash sandboxing</span></div></div>
+<div class="sk new"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/sg-file</span> <span class="sk-desc">Read Sourcegraph file</span></div></div>
+<div class="sk new"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/sg-search</span> <span class="sk-desc">Search Sourcegraph</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/skills</span> <span class="sk-desc">List skills</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/terminal-setup</span> <span class="sk-desc">Terminal integration</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/todos</span> <span class="sk-desc">Current todo items</span></div></div>
 <div class="sk"><span class="dot noncode"></span><div class="sk-body"><span class="sk-name noncode">/upgrade</span> <span class="sk-desc">Switch to Max plan</span></div></div>
+</div>
+<div class="section cat-cv">
+<h2>FiftyOne / CV <span style="font-weight:400;font-size:5.5pt">(14 skills)</span></h2>
+<div class="note new">quickstart · help · develop-plugin · dataset-curation · dataset-export · dataset-import · dataset-inference · model-evaluation · find-duplicates · embeddings-visualization · create-notebook · code-style · voodo-design · troubleshoot · issue-triage</div>
 </div>
 </div>
 </div>
@@ -238,55 +263,55 @@
 <div class="cli-item"><span class="cli-flag">-r, --resume [id]</span> <span class="cli-desc">Resume by session ID</span></div>
 <div class="cli-item"><span class="cli-flag">-w, --worktree [name]</span> <span class="cli-desc">Isolated git worktree</span></div>
 <div class="cli-item"><span class="cli-flag">-n, --name &lt;name&gt;</span> <span class="cli-desc">Session display name</span></div>
-<div class="cli-item new"><span class="cli-flag">--session-id &lt;uuid&gt;</span> <span class="cli-desc">Fixed session UUID</span></div>
+<div class="cli-item"><span class="cli-flag">--session-id &lt;uuid&gt;</span> <span class="cli-desc">Fixed session UUID</span></div>
 <div class="cli-item"><span class="cli-flag">--from-pr [pr]</span> <span class="cli-desc">Resume PR-linked session</span></div>
 <div class="cli-item"><span class="cli-flag">--fork-session</span> <span class="cli-desc">New ID when resuming</span></div>
 <div class="cli-item"><span class="cli-flag">--model &lt;model&gt;</span> <span class="cli-desc">opus / sonnet / haiku</span></div>
-<div class="cli-item new"><span class="cli-flag">--effort &lt;level&gt;</span> <span class="cli-desc">low / med / high / max</span></div>
+<div class="cli-item"><span class="cli-flag">--effort &lt;level&gt;</span> <span class="cli-desc">low / med / high / max</span></div>
 <div class="cli-item"><span class="cli-flag">--agent &lt;agent&gt;</span> <span class="cli-desc">Use specific agent</span></div>
-<div class="cli-item new"><span class="cli-flag">--agents &lt;json&gt;</span> <span class="cli-desc">Custom agent definitions</span></div>
-<div class="cli-item new"><span class="cli-flag">--fallback-model &lt;m&gt;</span> <span class="cli-desc">Overload fallback (--print)</span></div>
-<div class="cli-item new"><span class="cli-flag">--brief</span> <span class="cli-desc">Agent-to-user messaging</span></div>
-<div class="cli-item new"><span class="cli-flag">--[no-]chrome</span> <span class="cli-desc">Chrome integration on/off</span></div>
+<div class="cli-item"><span class="cli-flag">--agents &lt;json&gt;</span> <span class="cli-desc">Custom agent definitions</span></div>
+<div class="cli-item"><span class="cli-flag">--fallback-model &lt;m&gt;</span> <span class="cli-desc">Overload fallback (--print)</span></div>
+<div class="cli-item"><span class="cli-flag">--brief</span> <span class="cli-desc">Agent-to-user messaging</span></div>
+<div class="cli-item"><span class="cli-flag">--[no-]chrome</span> <span class="cli-desc">Chrome integration on/off</span></div>
 <div class="cli-item"><span class="cli-flag">--add-dir &lt;dirs&gt;</span> <span class="cli-desc">Additional directories</span></div>
-<div class="cli-item new"><span class="cli-flag">--file &lt;specs&gt;</span> <span class="cli-desc">Fetch file resources</span></div>
+<div class="cli-item"><span class="cli-flag">--file &lt;specs&gt;</span> <span class="cli-desc">Fetch file resources</span></div>
 <div class="cli-item"><span class="cli-flag">--system-prompt &lt;text&gt;</span> <span class="cli-desc">Override system prompt</span></div>
 <div class="cli-item"><span class="cli-flag">--append-system-prompt</span> <span class="cli-desc">Append to system prompt</span></div>
 <div class="cli-item"><span class="cli-flag">--settings &lt;file|json&gt;</span> <span class="cli-desc">Load settings</span></div>
-<div class="cli-item new"><span class="cli-flag">--setting-sources &lt;s&gt;</span> <span class="cli-desc">user / project / local</span></div>
+<div class="cli-item"><span class="cli-flag">--setting-sources &lt;s&gt;</span> <span class="cli-desc">user / project / local</span></div>
 <div class="cli-item"><span class="cli-flag">--mcp-config &lt;files&gt;</span> <span class="cli-desc">MCP server configs</span></div>
-<div class="cli-item new"><span class="cli-flag">--strict-mcp-config</span> <span class="cli-desc">Only --mcp-config MCPs</span></div>
+<div class="cli-item"><span class="cli-flag">--strict-mcp-config</span> <span class="cli-desc">Only --mcp-config MCPs</span></div>
 <div class="cli-item"><span class="cli-flag">--plugin-dir &lt;path&gt;</span> <span class="cli-desc">Plugins from directory</span></div>
 <div class="cli-item"><span class="cli-flag">--tools &lt;tools&gt;</span> <span class="cli-desc">Restrict available tools</span></div>
-<div class="cli-item new"><span class="cli-flag">--allowed-tools &lt;t&gt;</span> <span class="cli-desc">Whitelist specific tools</span></div>
-<div class="cli-item new"><span class="cli-flag">--disallowed-tools &lt;t&gt;</span> <span class="cli-desc">Deny specific tools</span></div>
-<div class="cli-item new"><span class="cli-flag">--disable-slash-commands</span> <span class="cli-desc">Disable all skills</span></div>
+<div class="cli-item"><span class="cli-flag">--allowed-tools &lt;t&gt;</span> <span class="cli-desc">Whitelist specific tools</span></div>
+<div class="cli-item"><span class="cli-flag">--disallowed-tools &lt;t&gt;</span> <span class="cli-desc">Deny specific tools</span></div>
+<div class="cli-item"><span class="cli-flag">--disable-slash-commands</span> <span class="cli-desc">Disable all skills</span></div>
 <div class="cli-item"><span class="cli-flag">--permission-mode &lt;m&gt;</span> <span class="cli-desc">default / plan / auto / …</span></div>
 <div class="cli-item"><span class="cli-flag">--dangerously-skip-permissions</span> <span class="cli-desc">Bypass checks</span></div>
-<div class="cli-item new"><span class="cli-flag">--allow-dangerously-skip-permissions</span> <span class="cli-desc">Enable bypass option</span></div>
+<div class="cli-item"><span class="cli-flag">--allow-dangerously-skip-permissions</span> <span class="cli-desc">Enable bypass option</span></div>
 <div class="cli-item"><span class="cli-flag">--bare</span> <span class="cli-desc">Minimal mode (no hooks/LSP)</span></div>
 <div class="cli-item"><span class="cli-flag">--output-format &lt;fmt&gt;</span> <span class="cli-desc">text / json / stream-json</span></div>
-<div class="cli-item new"><span class="cli-flag">--input-format &lt;fmt&gt;</span> <span class="cli-desc">text / stream-json</span></div>
+<div class="cli-item"><span class="cli-flag">--input-format &lt;fmt&gt;</span> <span class="cli-desc">text / stream-json</span></div>
 <div class="cli-item"><span class="cli-flag">--json-schema &lt;schema&gt;</span> <span class="cli-desc">Structured output</span></div>
-<div class="cli-item new"><span class="cli-flag">--include-partial-messages</span> <span class="cli-desc">Partial stream chunks</span></div>
-<div class="cli-item new"><span class="cli-flag">--replay-user-messages</span> <span class="cli-desc">Echo user input on stdout</span></div>
-<div class="cli-item new"><span class="cli-flag">--verbose</span> <span class="cli-desc">Verbose mode override</span></div>
+<div class="cli-item"><span class="cli-flag">--include-partial-messages</span> <span class="cli-desc">Partial stream chunks</span></div>
+<div class="cli-item"><span class="cli-flag">--replay-user-messages</span> <span class="cli-desc">Echo user input on stdout</span></div>
+<div class="cli-item"><span class="cli-flag">--verbose</span> <span class="cli-desc">Verbose mode override</span></div>
 <div class="cli-item"><span class="cli-flag">--max-budget-usd &lt;$&gt;</span> <span class="cli-desc">Spending cap</span></div>
-<div class="cli-item new"><span class="cli-flag">--no-session-persistence</span> <span class="cli-desc">Ephemeral session (--print)</span></div>
+<div class="cli-item"><span class="cli-flag">--no-session-persistence</span> <span class="cli-desc">Ephemeral session (--print)</span></div>
 <div class="cli-item"><span class="cli-flag">--tmux</span> <span class="cli-desc">tmux session (with -w)</span></div>
 <div class="cli-item"><span class="cli-flag">-d, --debug [filter]</span> <span class="cli-desc">Debug mode</span></div>
-<div class="cli-item new"><span class="cli-flag">--debug-file &lt;path&gt;</span> <span class="cli-desc">Debug log to file</span></div>
-<div class="cli-item new"><span class="cli-flag">--betas &lt;betas&gt;</span> <span class="cli-desc">Beta API headers</span></div>
+<div class="cli-item"><span class="cli-flag">--debug-file &lt;path&gt;</span> <span class="cli-desc">Debug log to file</span></div>
+<div class="cli-item"><span class="cli-flag">--betas &lt;betas&gt;</span> <span class="cli-desc">Beta API headers</span></div>
 <div class="cli-item"><span class="cli-flag">-v, --version</span> <span class="cli-desc">Show version</span></div>
 <div style="margin-top: 2px; border-top: 1px dotted #ccc; padding-top: 2px;">
 <div class="cli-item"><span class="cli-sub">claude auth</span> <span class="cli-desc">login / status / logout</span></div>
-<div class="cli-item new"><span class="cli-sub">claude agents</span> <span class="cli-desc">List configured agents</span></div>
-<div class="cli-item new"><span class="cli-sub">claude auto-mode</span> <span class="cli-desc">Auto mode classifier</span></div>
+<div class="cli-item"><span class="cli-sub">claude agents</span> <span class="cli-desc">List configured agents</span></div>
+<div class="cli-item"><span class="cli-sub">claude auto-mode</span> <span class="cli-desc">Auto mode classifier</span></div>
 <div class="cli-item"><span class="cli-sub">claude doctor</span> <span class="cli-desc">Health check</span></div>
 <div class="cli-item"><span class="cli-sub">claude mcp</span> <span class="cli-desc">add / remove / list servers</span></div>
 <div class="cli-item"><span class="cli-sub">claude plugin</span> <span class="cli-desc">install / enable / disable</span></div>
 <div class="cli-item"><span class="cli-sub">claude install</span> <span class="cli-desc">Install native build</span></div>
-<div class="cli-item new"><span class="cli-sub">claude setup-token</span> <span class="cli-desc">Long-lived auth token</span></div>
+<div class="cli-item"><span class="cli-sub">claude setup-token</span> <span class="cli-desc">Long-lived auth token</span></div>
 <div class="cli-item"><span class="cli-sub">claude update</span> <span class="cli-desc">Check &amp; install updates</span></div>
 </div>
 </div>
@@ -296,7 +321,7 @@
   <b style="color:#27ae60">●</b> Validate &nbsp;
   <b style="color:#2980b9">●</b> Ship &nbsp;
   <b style="color:#999">●</b> Non-code &nbsp;·&nbsp;
-  ~77 commands · 29 shortcuts · 45 CLI flags · 9 subcommands
+  ~83 skills · 39 commands · 29 shortcuts · 45 CLI flags · 9 subcommands
 </div>
 </body>
 </html>

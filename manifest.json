@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
-  "lastGenerated": "2026-03-28T12:00:00Z",
-  "note": "19 new CLI flags, 3 new subcommands, --effort now supports max"
+  "version": "1.6",
+  "lastGenerated": "2026-03-29T12:00:00Z",
+  "note": "48 new skills: allium (4), data-engineering (22), fiftyone (14), sourcegraph (2), imessage (2), remember, mintlify"
 }
