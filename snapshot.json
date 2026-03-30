@@ -259,6 +259,12 @@
       "desc": "Search Sourcegraph"
     },
     {
+      "name": "/searching-sourcegraph",
+      "category": "Extensions",
+      "color": "noncode",
+      "desc": "Sourcegraph code navigation"
+    },
+    {
       "name": "/imessage:configure",
       "category": "Extensions",
       "color": "noncode",
@@ -280,7 +286,7 @@
       "name": "/fiftyone",
       "category": "FiftyOne",
       "color": "compact",
-      "desc": "14 skills: quickstart, help, develop-plugin, dataset-curation, dataset-export, dataset-import, dataset-inference, model-evaluation, find-duplicates, embeddings-visualization, create-notebook, code-style, voodo-design, troubleshoot, issue-triage"
+      "desc": "15 skills: quickstart, help, develop-plugin, dataset-curation, dataset-export, dataset-import, dataset-inference, model-evaluation, find-duplicates, embeddings-visualization, create-notebook, code-style, voodo-design, troubleshoot, issue-triage"
     }
   ],
   "commands": [
