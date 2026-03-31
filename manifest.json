@@ -1,5 +1,1 @@
-{
-  "version": "1.7",
-  "lastGenerated": "2026-03-30T06:02:00Z",
-  "note": "Added searching-sourcegraph skill, fixed FiftyOne count 14→15"
-}
+{"version":"1.8","lastGenerated":"2026-03-31T06:02:00Z","note":"Removed Sourcegraph skills (sg-file, sg-search, searching-sourcegraph) and FiftyOne/CV section"}

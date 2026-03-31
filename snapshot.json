@@ -247,24 +247,6 @@
       "desc": "Build Mintlify docs"
     },
     {
-      "name": "/sg-file",
-      "category": "Extensions",
-      "color": "noncode",
-      "desc": "Read Sourcegraph file"
-    },
-    {
-      "name": "/sg-search",
-      "category": "Extensions",
-      "color": "noncode",
-      "desc": "Search Sourcegraph"
-    },
-    {
-      "name": "/searching-sourcegraph",
-      "category": "Extensions",
-      "color": "noncode",
-      "desc": "Sourcegraph code navigation"
-    },
-    {
       "name": "/imessage:configure",
       "category": "Extensions",
       "color": "noncode",
@@ -281,12 +263,6 @@
       "category": "Data Engineering",
       "color": "compact",
       "desc": "22 skills: warehouse-init, analyzing-data, airflow, authoring-dags, debugging-dags, testing-dags, deploying-airflow, airflow-hitl, airflow-plugins, cosmos-dbt-core, cosmos-dbt-fusion, checking-freshness, profiling-tables, tracing-upstream-lineage, tracing-downstream-lineage, annotating-task-lineage, creating-openlineage-extractors, setting-up-astro-project, managing-astro-local-env, managing-astro-deployments, troubleshooting-astro-deployments, migrating-airflow-2-to-3"
-    },
-    {
-      "name": "/fiftyone",
-      "category": "FiftyOne",
-      "color": "compact",
-      "desc": "15 skills: quickstart, help, develop-plugin, dataset-curation, dataset-export, dataset-import, dataset-inference, model-evaluation, find-duplicates, embeddings-visualization, create-notebook, code-style, voodo-design, troubleshoot, issue-triage"
     }
   ],
   "commands": [
