@@ -211,12 +211,6 @@
       "desc": "Generate reference PDF"
     },
     {
-      "name": "/remember",
-      "category": "Info",
-      "color": "noncode",
-      "desc": "Save session state"
-    },
-    {
       "name": "/allium",
       "category": "Allium",
       "color": "noncode",
@@ -232,7 +226,7 @@
       "name": "/allium:elicit",
       "category": "Allium",
       "color": "create",
-      "desc": "Discovery session → spec"
+      "desc": "Discovery session \u2192 spec"
     },
     {
       "name": "/allium:propagate",
@@ -313,9 +307,9 @@
     "/",
     "@",
     "&",
-    "Shift+↵",
+    "Shift+\u21b5",
     "Tab",
-    "↑ / ↓",
+    "\u2191 / \u2193",
     "Esc",
     "Ctrl+U",
     "Ctrl+K",
@@ -336,7 +330,7 @@
     "Ctrl+V",
     "Ctrl+B",
     "Ctrl+X Ctrl+K",
-    "Shift+↓",
+    "Shift+\u2193",
     "Space"
   ],
   "cliFlags": [
