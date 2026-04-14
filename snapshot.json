@@ -379,7 +379,11 @@
     "--debug-file",
     "--tmux",
     "-d",
-    "-v"
+    "-v",
+    "--ide",
+    "--exclude-dynamic-system-prompt-sections",
+    "--include-hook-events",
+    "--remote-control-session-name-prefix"
   ],
   "cliSubcommands": [
     "claude auth",

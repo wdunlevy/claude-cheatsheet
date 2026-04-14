@@ -1,1 +1,1 @@
-{"version":"1.9","lastGenerated":"2026-04-02T06:03:00Z","note":"Removed /remember skill (no longer in available skills list)"}
+{"version":"1.10","lastGenerated":"2026-04-14T10:03:00Z","note":"Added 4 new CLI flags: --ide, --exclude-dynamic-system-prompt-sections, --include-hook-events, --remote-control-session-name-prefix"}

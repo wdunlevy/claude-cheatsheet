@@ -68,7 +68,7 @@
 <div>
 <h1>Claude Code</h1>
 <div style="font-size: 9pt; font-weight: 600; color: #555; margin-bottom: 2px;">Complete Reference</div>
-<div class="subtitle">Skills · commands · keys · CLI &nbsp;·&nbsp; v1.9 · 2026-04-02 06:03</div>
+<div class="subtitle">Skills · commands · keys · CLI &nbsp;·&nbsp; v1.10 · 2026-04-14 10:03</div>
 <div style="font-size: 5.5pt; color: #888; margin-bottom: 2px;"><a href="https://github.com/wdunlevy/claude-cheatsheet" style="color: #888; text-decoration: none;">github.com/wdunlevy/claude-cheatsheet</a></div>
 <div class="legend">
   <span><span class="dot create"></span> Create</span>
@@ -266,10 +266,12 @@
 <div class="cli-item"><span class="cli-flag">--fallback-model &lt;m&gt;</span> <span class="cli-desc">Overload fallback (--print)</span></div>
 <div class="cli-item"><span class="cli-flag">--brief</span> <span class="cli-desc">Agent-to-user messaging</span></div>
 <div class="cli-item"><span class="cli-flag">--[no-]chrome</span> <span class="cli-desc">Chrome integration on/off</span></div>
+<div class="cli-item new"><span class="cli-flag">--ide</span> <span class="cli-desc">Auto-connect to IDE on startup</span></div>
 <div class="cli-item"><span class="cli-flag">--add-dir &lt;dirs&gt;</span> <span class="cli-desc">Additional directories</span></div>
 <div class="cli-item"><span class="cli-flag">--file &lt;specs&gt;</span> <span class="cli-desc">Fetch file resources</span></div>
 <div class="cli-item"><span class="cli-flag">--system-prompt &lt;text&gt;</span> <span class="cli-desc">Override system prompt</span></div>
 <div class="cli-item"><span class="cli-flag">--append-system-prompt</span> <span class="cli-desc">Append to system prompt</span></div>
+<div class="cli-item new"><span class="cli-flag">--exclude-dynamic-system-prompt-sections</span> <span class="cli-desc">Cross-user cache reuse</span></div>
 <div class="cli-item"><span class="cli-flag">--settings &lt;file|json&gt;</span> <span class="cli-desc">Load settings</span></div>
 <div class="cli-item"><span class="cli-flag">--setting-sources &lt;s&gt;</span> <span class="cli-desc">user / project / local</span></div>
 <div class="cli-item"><span class="cli-flag">--mcp-config &lt;files&gt;</span> <span class="cli-desc">MCP server configs</span></div>
@@ -287,11 +289,13 @@
 <div class="cli-item"><span class="cli-flag">--input-format &lt;fmt&gt;</span> <span class="cli-desc">text / stream-json</span></div>
 <div class="cli-item"><span class="cli-flag">--json-schema &lt;schema&gt;</span> <span class="cli-desc">Structured output</span></div>
 <div class="cli-item"><span class="cli-flag">--include-partial-messages</span> <span class="cli-desc">Partial stream chunks</span></div>
+<div class="cli-item new"><span class="cli-flag">--include-hook-events</span> <span class="cli-desc">Hook events in stream-json</span></div>
 <div class="cli-item"><span class="cli-flag">--replay-user-messages</span> <span class="cli-desc">Echo user input on stdout</span></div>
 <div class="cli-item"><span class="cli-flag">--verbose</span> <span class="cli-desc">Verbose mode override</span></div>
 <div class="cli-item"><span class="cli-flag">--max-budget-usd &lt;$&gt;</span> <span class="cli-desc">Spending cap</span></div>
 <div class="cli-item"><span class="cli-flag">--no-session-persistence</span> <span class="cli-desc">Ephemeral session (--print)</span></div>
 <div class="cli-item"><span class="cli-flag">--tmux</span> <span class="cli-desc">tmux session (with -w)</span></div>
+<div class="cli-item new"><span class="cli-flag">--remote-control-session-name-prefix</span> <span class="cli-desc">RC session name prefix</span></div>
 <div class="cli-item"><span class="cli-flag">-d, --debug [filter]</span> <span class="cli-desc">Debug mode</span></div>
 <div class="cli-item"><span class="cli-flag">--debug-file &lt;path&gt;</span> <span class="cli-desc">Debug log to file</span></div>
 <div class="cli-item"><span class="cli-flag">--betas &lt;betas&gt;</span> <span class="cli-desc">Beta API headers</span></div>
@@ -314,7 +318,7 @@
   <b style="color:#27ae60">●</b> Validate &nbsp;
   <b style="color:#2980b9">●</b> Ship &nbsp;
   <b style="color:#999">●</b> Non-code &nbsp;·&nbsp;
-  ~67 skills · 39 commands · 29 shortcuts · 45 CLI flags · 9 subcommands
+  ~67 skills · 39 commands · 29 shortcuts · 49 CLI flags · 9 subcommands
 </div>
 </body>
 </html>
