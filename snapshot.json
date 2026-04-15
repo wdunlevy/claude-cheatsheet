@@ -91,6 +91,12 @@
       "desc": "Code review a PR"
     },
     {
+      "name": "/review",
+      "category": "Git & PR",
+      "color": "validate",
+      "desc": "Review a pull request"
+    },
+    {
       "name": "/review-pr",
       "category": "Git & PR",
       "color": "validate",
@@ -133,6 +139,12 @@
       "desc": "Update CLAUDE.md from session"
     },
     {
+      "name": "/security-review",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Security review pending changes"
+    },
+    {
       "name": "/simplify",
       "category": "Code Quality",
       "color": "validate",
@@ -169,10 +181,22 @@
       "desc": "Recommend automations"
     },
     {
+      "name": "/init",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Initialize new CLAUDE.md"
+    },
+    {
       "name": "/keybindings-help",
       "category": "Setup",
       "color": "noncode",
       "desc": "Customize shortcuts"
+    },
+    {
+      "name": "/statusline",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Set up status line UI"
     },
     {
       "name": "/update-config",
@@ -211,6 +235,18 @@
       "desc": "Generate reference PDF"
     },
     {
+      "name": "/insights",
+      "category": "Info",
+      "color": "noncode",
+      "desc": "Analyze session usage"
+    },
+    {
+      "name": "/team-onboarding",
+      "category": "Info",
+      "color": "noncode",
+      "desc": "Onboarding guide from usage"
+    },
+    {
       "name": "/allium",
       "category": "Allium",
       "color": "noncode",
@@ -226,7 +262,7 @@
       "name": "/allium:elicit",
       "category": "Allium",
       "color": "create",
-      "desc": "Discovery session \u2192 spec"
+      "desc": "Discovery session → spec"
     },
     {
       "name": "/allium:propagate",
@@ -307,9 +343,9 @@
     "/",
     "@",
     "&",
-    "Shift+\u21b5",
+    "Shift+↵",
     "Tab",
-    "\u2191 / \u2193",
+    "↑ / ↓",
     "Esc",
     "Ctrl+U",
     "Ctrl+K",
@@ -330,7 +366,7 @@
     "Ctrl+V",
     "Ctrl+B",
     "Ctrl+X Ctrl+K",
-    "Shift+\u2193",
+    "Shift+↓",
     "Space"
   ],
   "cliFlags": [
