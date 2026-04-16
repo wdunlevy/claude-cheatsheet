@@ -193,12 +193,6 @@
       "desc": "Customize shortcuts"
     },
     {
-      "name": "/statusline",
-      "category": "Setup",
-      "color": "noncode",
-      "desc": "Set up status line UI"
-    },
-    {
       "name": "/update-config",
       "category": "Setup",
       "color": "noncode",
@@ -233,18 +227,6 @@
       "category": "Info",
       "color": "noncode",
       "desc": "Generate reference PDF"
-    },
-    {
-      "name": "/insights",
-      "category": "Info",
-      "color": "noncode",
-      "desc": "Analyze session usage"
-    },
-    {
-      "name": "/team-onboarding",
-      "category": "Info",
-      "color": "noncode",
-      "desc": "Onboarding guide from usage"
     },
     {
       "name": "/allium",
