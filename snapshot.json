@@ -1,55 +1,423 @@
 {
   "skills": [
-    {"name":"/brainstorming","category":"Superpowers","color":"create","desc":"Creative exploration before code"},
-    {"name":"/writing-plans","category":"Superpowers","color":"create","desc":"Implementation plans from specs"},
-    {"name":"/writing-skills","category":"Superpowers","color":"create","desc":"Create or edit CC skills"},
-    {"name":"/receiving-code-review","category":"Superpowers","color":"validate","desc":"Handle review feedback"},
-    {"name":"/requesting-code-review","category":"Superpowers","color":"validate","desc":"Request review of work"},
-    {"name":"/systematic-debugging","category":"Superpowers","color":"validate","desc":"Structured bug investigation"},
-    {"name":"/test-driven-development","category":"Superpowers","color":"validate","desc":"Tests before implementation"},
-    {"name":"/verification-before-completion","category":"Superpowers","color":"validate","desc":"Verify before claiming done"},
-    {"name":"/dispatching-parallel-agents","category":"Superpowers","color":"ship","desc":"Run 2+ tasks concurrently"},
-    {"name":"/executing-plans","category":"Superpowers","color":"ship","desc":"Execute plan task-by-task"},
-    {"name":"/finishing-a-development-branch","category":"Superpowers","color":"ship","desc":"Merge, PR, keep, or discard"},
-    {"name":"/subagent-driven-development","category":"Superpowers","color":"ship","desc":"Parallel subagent execution"},
-    {"name":"/using-git-worktrees","category":"Superpowers","color":"ship","desc":"Isolated worktree setup"},
-    {"name":"/using-superpowers","category":"Superpowers","color":"noncode","desc":"Discover available skills"},
-    {"name":"/code-review","category":"Git & PR","color":"validate","desc":"Code review a PR"},
-    {"name":"/review","category":"Git & PR","color":"validate","desc":"Review a pull request"},
-    {"name":"/review-pr","category":"Git & PR","color":"validate","desc":"Multi-agent PR review"},
-    {"name":"/clean_gone","category":"Git & PR","color":"ship","desc":"Clean deleted remote branches"},
-    {"name":"/commit","category":"Git & PR","color":"ship","desc":"Git commit (conventional msg)"},
-    {"name":"/commit-push-pr","category":"Git & PR","color":"ship","desc":"Commit + push + open PR"},
-    {"name":"/feature-dev","category":"Code Quality","color":"create","desc":"Guided feature dev + architecture"},
-    {"name":"/claude-md-improver","category":"Code Quality","color":"validate","desc":"Audit CLAUDE.md quality"},
-    {"name":"/revise-claude-md","category":"Code Quality","color":"validate","desc":"Update CLAUDE.md from session"},
-    {"name":"/security-review","category":"Code Quality","color":"validate","desc":"Security review pending changes"},
-    {"name":"/simplify","category":"Code Quality","color":"validate","desc":"Review code for reuse & clarity"},
-    {"name":"/frontend-design","category":"Creative","color":"create","desc":"Production-grade frontend UI"},
-    {"name":"/playground","category":"Creative","color":"create","desc":"Interactive HTML explorers"},
-    {"name":"/skill-creator","category":"Creative","color":"create","desc":"Create & benchmark skills"},
-    {"name":"/cursor","category":"Project","color":"noncode","desc":"Open Cursor IDE for cwd"},
-    {"name":"/claude-automation-recommender","category":"Setup","color":"noncode","desc":"Recommend automations"},
-    {"name":"/init","category":"Setup","color":"noncode","desc":"Initialize new CLAUDE.md"},
-    {"name":"/keybindings-help","category":"Setup","color":"noncode","desc":"Customize shortcuts"},
-    {"name":"/less-permission-prompts","category":"Setup","color":"noncode","desc":"Auto-allowlist read-only tools"},
-    {"name":"/update-config","category":"Setup","color":"noncode","desc":"Edit settings.json / hooks"},
-    {"name":"/claude-api","category":"Setup","color":"create","desc":"Build with Claude API / SDK"},
-    {"name":"/new-sdk-app","category":"Setup","color":"create","desc":"Create Agent SDK app"},
-    {"name":"/loop","category":"Automation","color":"ship","desc":"Recurring prompt interval"},
-    {"name":"/schedule","category":"Automation","color":"ship","desc":"Cron-scheduled remote agents"},
-    {"name":"/cheatsheet","category":"Info","color":"noncode","desc":"Generate reference PDF"},
-    {"name":"/allium","category":"Allium","color":"noncode","desc":"LLM-native spec language"},
-    {"name":"/allium:distill","category":"Allium","color":"create","desc":"Extract spec from code"},
-    {"name":"/allium:elicit","category":"Allium","color":"create","desc":"Discovery session → spec"},
-    {"name":"/allium:propagate","category":"Allium","color":"validate","desc":"Generate tests from spec"},
-    {"name":"/mintlify","category":"Extensions","color":"create","desc":"Build Mintlify docs"},
-    {"name":"/imessage:configure","category":"Extensions","color":"noncode","desc":"iMessage channel setup"},
-    {"name":"/imessage:access","category":"Extensions","color":"noncode","desc":"iMessage access policy"},
-    {"name":"/data-engineering","category":"Data Engineering","color":"compact","desc":"22 skills: warehouse-init, analyzing-data, airflow, authoring-dags, debugging-dags, testing-dags, deploying-airflow, airflow-hitl, airflow-plugins, cosmos-dbt-core, cosmos-dbt-fusion, checking-freshness, profiling-tables, tracing-upstream-lineage, tracing-downstream-lineage, annotating-task-lineage, creating-openlineage-extractors, setting-up-astro-project, managing-astro-local-env, managing-astro-deployments, troubleshooting-astro-deployments, migrating-airflow-2-to-3"}
+    {
+      "name": "/brainstorming",
+      "category": "Superpowers",
+      "color": "create",
+      "desc": "Creative exploration before code"
+    },
+    {
+      "name": "/writing-plans",
+      "category": "Superpowers",
+      "color": "create",
+      "desc": "Implementation plans from specs"
+    },
+    {
+      "name": "/writing-skills",
+      "category": "Superpowers",
+      "color": "create",
+      "desc": "Create or edit CC skills"
+    },
+    {
+      "name": "/receiving-code-review",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Handle review feedback"
+    },
+    {
+      "name": "/requesting-code-review",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Request review of work"
+    },
+    {
+      "name": "/systematic-debugging",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Structured bug investigation"
+    },
+    {
+      "name": "/test-driven-development",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Tests before implementation"
+    },
+    {
+      "name": "/verification-before-completion",
+      "category": "Superpowers",
+      "color": "validate",
+      "desc": "Verify before claiming done"
+    },
+    {
+      "name": "/dispatching-parallel-agents",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Run 2+ tasks concurrently"
+    },
+    {
+      "name": "/executing-plans",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Execute plan task-by-task"
+    },
+    {
+      "name": "/finishing-a-development-branch",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Merge, PR, keep, or discard"
+    },
+    {
+      "name": "/subagent-driven-development",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Parallel subagent execution"
+    },
+    {
+      "name": "/using-git-worktrees",
+      "category": "Superpowers",
+      "color": "ship",
+      "desc": "Isolated worktree setup"
+    },
+    {
+      "name": "/using-superpowers",
+      "category": "Superpowers",
+      "color": "noncode",
+      "desc": "Discover available skills"
+    },
+    {
+      "name": "/code-review",
+      "category": "Git & PR",
+      "color": "validate",
+      "desc": "Code review a PR"
+    },
+    {
+      "name": "/review",
+      "category": "Git & PR",
+      "color": "validate",
+      "desc": "Review a pull request"
+    },
+    {
+      "name": "/review-pr",
+      "category": "Git & PR",
+      "color": "validate",
+      "desc": "Multi-agent PR review"
+    },
+    {
+      "name": "/clean_gone",
+      "category": "Git & PR",
+      "color": "ship",
+      "desc": "Clean deleted remote branches"
+    },
+    {
+      "name": "/commit",
+      "category": "Git & PR",
+      "color": "ship",
+      "desc": "Git commit (conventional msg)"
+    },
+    {
+      "name": "/commit-push-pr",
+      "category": "Git & PR",
+      "color": "ship",
+      "desc": "Commit + push + open PR"
+    },
+    {
+      "name": "/feature-dev",
+      "category": "Code Quality",
+      "color": "create",
+      "desc": "Guided feature dev + architecture"
+    },
+    {
+      "name": "/claude-md-improver",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Audit CLAUDE.md quality"
+    },
+    {
+      "name": "/revise-claude-md",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Update CLAUDE.md from session"
+    },
+    {
+      "name": "/security-review",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Security review pending changes"
+    },
+    {
+      "name": "/simplify",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Review code for reuse & clarity"
+    },
+    {
+      "name": "/frontend-design",
+      "category": "Creative",
+      "color": "create",
+      "desc": "Production-grade frontend UI"
+    },
+    {
+      "name": "/playground",
+      "category": "Creative",
+      "color": "create",
+      "desc": "Interactive HTML explorers"
+    },
+    {
+      "name": "/skill-creator",
+      "category": "Creative",
+      "color": "create",
+      "desc": "Create & benchmark skills"
+    },
+    {
+      "name": "/cursor",
+      "category": "Project",
+      "color": "noncode",
+      "desc": "Open Cursor IDE for cwd"
+    },
+    {
+      "name": "/claude-automation-recommender",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Recommend automations"
+    },
+    {
+      "name": "/init",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Initialize new CLAUDE.md"
+    },
+    {
+      "name": "/keybindings-help",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Customize shortcuts"
+    },
+    {
+      "name": "/fewer-permission-prompts",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Auto-allowlist read-only tools"
+    },
+    {
+      "name": "/update-config",
+      "category": "Setup",
+      "color": "noncode",
+      "desc": "Edit settings.json / hooks"
+    },
+    {
+      "name": "/claude-api",
+      "category": "Setup",
+      "color": "create",
+      "desc": "Build with Claude API / SDK"
+    },
+    {
+      "name": "/new-sdk-app",
+      "category": "Setup",
+      "color": "create",
+      "desc": "Create Agent SDK app"
+    },
+    {
+      "name": "/loop",
+      "category": "Automation",
+      "color": "ship",
+      "desc": "Recurring prompt interval"
+    },
+    {
+      "name": "/schedule",
+      "category": "Automation",
+      "color": "ship",
+      "desc": "Cron-scheduled remote agents"
+    },
+    {
+      "name": "/cheatsheet",
+      "category": "Info",
+      "color": "noncode",
+      "desc": "Generate reference PDF"
+    },
+    {
+      "name": "/allium",
+      "category": "Allium",
+      "color": "noncode",
+      "desc": "LLM-native spec language"
+    },
+    {
+      "name": "/allium:distill",
+      "category": "Allium",
+      "color": "create",
+      "desc": "Extract spec from code"
+    },
+    {
+      "name": "/allium:elicit",
+      "category": "Allium",
+      "color": "create",
+      "desc": "Discovery session \u2192 spec"
+    },
+    {
+      "name": "/allium:propagate",
+      "category": "Allium",
+      "color": "validate",
+      "desc": "Generate tests from spec"
+    },
+    {
+      "name": "/mintlify",
+      "category": "Extensions",
+      "color": "create",
+      "desc": "Build Mintlify docs"
+    },
+    {
+      "name": "/imessage:configure",
+      "category": "Extensions",
+      "color": "noncode",
+      "desc": "iMessage channel setup"
+    },
+    {
+      "name": "/imessage:access",
+      "category": "Extensions",
+      "color": "noncode",
+      "desc": "iMessage access policy"
+    },
+    {
+      "name": "/data-engineering",
+      "category": "Data Engineering",
+      "color": "compact",
+      "desc": "22 skills: warehouse-init, analyzing-data, airflow, authoring-dags, debugging-dags, testing-dags, deploying-airflow, airflow-hitl, airflow-plugins, cosmos-dbt-core, cosmos-dbt-fusion, checking-freshness, profiling-tables, tracing-upstream-lineage, tracing-downstream-lineage, annotating-task-lineage, creating-openlineage-extractors, setting-up-astro-project, managing-astro-local-env, managing-astro-deployments, troubleshooting-astro-deployments, migrating-airflow-2-to-3"
+    }
   ],
-  "commands": ["/add-dir","/agents","/branch","/btw","/clear","/color","/compact","/config","/context","/copy","/cost","/debug","/doctor","/effort","/export","/extra-usage","/fast","/feedback","/help","/ide","/mcp","/memory","/model","/permissions","/plan","/plugins","/release-notes","/remote-control","/rename","/resume","/rewind","/sandbox","/skills","/stats","/status","/terminal-setup","/theme","/todos","/upgrade","/usage","/voice"],
-  "shortcuts": ["!","/","@","&","Shift+↵","Tab","↑ / ↓","Esc","Ctrl+U","Ctrl+K","Ctrl+Y","Alt+Y","Shift+Tab","Ctrl+O","Ctrl+R","Ctrl+S","Ctrl+G","Ctrl+X Ctrl+E","Ctrl+L","Ctrl+Z","Ctrl+_","Alt+P","Alt+O","Alt+T","Ctrl+V","Ctrl+B","Ctrl+X Ctrl+K","Shift+↓","Space"],
-  "cliFlags": ["-p","-c","-r","-w","-n","--model","--effort","--agent","--agents","--chrome","--no-chrome","--add-dir","--file","--system-prompt","--append-system-prompt","--settings","--setting-sources","--mcp-config","--strict-mcp-config","--plugin-dir","--tools","--allowed-tools","--disallowed-tools","--disable-slash-commands","--permission-mode","--dangerously-skip-permissions","--allow-dangerously-skip-permissions","--bare","--output-format","--input-format","--json-schema","--include-partial-messages","--replay-user-messages","--verbose","--max-budget-usd","--no-session-persistence","--from-pr","--fork-session","--session-id","--brief","--fallback-model","--betas","--debug-file","--tmux","-d","-v","--ide","--exclude-dynamic-system-prompt-sections","--include-hook-events","--remote-control-session-name-prefix"],
-  "cliSubcommands": ["claude auth","claude agents","claude auto-mode","claude doctor","claude mcp","claude plugin","claude install","claude setup-token","claude update"]
+  "commands": [
+    "/add-dir",
+    "/agents",
+    "/branch",
+    "/btw",
+    "/clear",
+    "/color",
+    "/compact",
+    "/config",
+    "/context",
+    "/copy",
+    "/cost",
+    "/debug",
+    "/doctor",
+    "/effort",
+    "/export",
+    "/extra-usage",
+    "/fast",
+    "/feedback",
+    "/help",
+    "/ide",
+    "/mcp",
+    "/memory",
+    "/model",
+    "/permissions",
+    "/plan",
+    "/plugins",
+    "/release-notes",
+    "/remote-control",
+    "/rename",
+    "/resume",
+    "/rewind",
+    "/sandbox",
+    "/skills",
+    "/stats",
+    "/status",
+    "/terminal-setup",
+    "/theme",
+    "/todos",
+    "/upgrade",
+    "/usage",
+    "/voice"
+  ],
+  "shortcuts": [
+    "!",
+    "/",
+    "@",
+    "&",
+    "Shift+\u21b5",
+    "Tab",
+    "\u2191 / \u2193",
+    "Esc",
+    "Ctrl+U",
+    "Ctrl+K",
+    "Ctrl+Y",
+    "Alt+Y",
+    "Shift+Tab",
+    "Ctrl+O",
+    "Ctrl+R",
+    "Ctrl+S",
+    "Ctrl+G",
+    "Ctrl+X Ctrl+E",
+    "Ctrl+L",
+    "Ctrl+Z",
+    "Ctrl+_",
+    "Alt+P",
+    "Alt+O",
+    "Alt+T",
+    "Ctrl+V",
+    "Ctrl+B",
+    "Ctrl+X Ctrl+K",
+    "Shift+\u2193",
+    "Space"
+  ],
+  "cliFlags": [
+    "-p",
+    "-c",
+    "-r",
+    "-w",
+    "-n",
+    "--model",
+    "--effort",
+    "--agent",
+    "--agents",
+    "--chrome",
+    "--no-chrome",
+    "--add-dir",
+    "--file",
+    "--system-prompt",
+    "--append-system-prompt",
+    "--settings",
+    "--setting-sources",
+    "--mcp-config",
+    "--strict-mcp-config",
+    "--plugin-dir",
+    "--tools",
+    "--allowed-tools",
+    "--disallowed-tools",
+    "--disable-slash-commands",
+    "--permission-mode",
+    "--dangerously-skip-permissions",
+    "--allow-dangerously-skip-permissions",
+    "--bare",
+    "--output-format",
+    "--input-format",
+    "--json-schema",
+    "--include-partial-messages",
+    "--replay-user-messages",
+    "--verbose",
+    "--max-budget-usd",
+    "--no-session-persistence",
+    "--from-pr",
+    "--fork-session",
+    "--session-id",
+    "--brief",
+    "--fallback-model",
+    "--betas",
+    "--debug-file",
+    "--tmux",
+    "-d",
+    "-v",
+    "--ide",
+    "--exclude-dynamic-system-prompt-sections",
+    "--include-hook-events",
+    "--remote-control-session-name-prefix"
+  ],
+  "cliSubcommands": [
+    "claude auth",
+    "claude agents",
+    "claude auto-mode",
+    "claude doctor",
+    "claude mcp",
+    "claude plugin",
+    "claude install",
+    "claude setup-token",
+    "claude update"
+  ]
 }
