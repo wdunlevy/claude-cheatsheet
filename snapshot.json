@@ -235,30 +235,6 @@
       "desc": "Generate reference PDF"
     },
     {
-      "name": "/allium",
-      "category": "Allium",
-      "color": "noncode",
-      "desc": "LLM-native spec language"
-    },
-    {
-      "name": "/allium:distill",
-      "category": "Allium",
-      "color": "create",
-      "desc": "Extract spec from code"
-    },
-    {
-      "name": "/allium:elicit",
-      "category": "Allium",
-      "color": "create",
-      "desc": "Discovery session \u2192 spec"
-    },
-    {
-      "name": "/allium:propagate",
-      "category": "Allium",
-      "color": "validate",
-      "desc": "Generate tests from spec"
-    },
-    {
       "name": "/mintlify",
       "category": "Extensions",
       "color": "create",

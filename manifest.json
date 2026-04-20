@@ -1,1 +1,1 @@
-{"version":"1.14","lastGenerated":"2026-04-18T10:01:06Z","note":"Renamed /less-permission-prompts to /fewer-permission-prompts"}
+{"version": "1.15", "lastGenerated": "2026-04-20T10:03:30Z", "note": "Removed /allium and its sub-skills (distill, elicit, propagate) \u2014 plugin no longer enabled"}
