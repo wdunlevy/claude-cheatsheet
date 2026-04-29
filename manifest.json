@@ -1,1 +1,1 @@
-{"version": "1.15", "lastGenerated": "2026-04-20T10:03:30Z", "note": "Removed /allium and its sub-skills (distill, elicit, propagate) \u2014 plugin no longer enabled"}
+{"version": "1.16", "lastGenerated": "2026-04-29T06:01:00Z", "note": "Added claude ultrareview subcommand"}

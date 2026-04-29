@@ -307,9 +307,9 @@
     "/",
     "@",
     "&",
-    "Shift+\u21b5",
+    "Shift+↵",
     "Tab",
-    "\u2191 / \u2193",
+    "↑ / ↓",
     "Esc",
     "Ctrl+U",
     "Ctrl+K",
@@ -330,7 +330,7 @@
     "Ctrl+V",
     "Ctrl+B",
     "Ctrl+X Ctrl+K",
-    "Shift+\u2193",
+    "Shift+↓",
     "Space"
   ],
   "cliFlags": [
@@ -386,14 +386,15 @@
     "--remote-control-session-name-prefix"
   ],
   "cliSubcommands": [
-    "claude auth",
     "claude agents",
+    "claude auth",
     "claude auto-mode",
     "claude doctor",
+    "claude install",
     "claude mcp",
     "claude plugin",
-    "claude install",
     "claude setup-token",
+    "claude ultrareview",
     "claude update"
   ]
 }
