@@ -393,6 +393,7 @@
     "claude install",
     "claude mcp",
     "claude plugin",
+    "claude project",
     "claude setup-token",
     "claude ultrareview",
     "claude update"
