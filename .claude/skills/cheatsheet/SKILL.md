@@ -124,16 +124,27 @@ workflow doesn't introspect it but downstream tooling does.
 
 ### Step 6: Write the Run Result
 
-Write `last-run.json`. The workflow uses every field:
+Write `last-run.json`. The workflow uses every field. The three integer
+counts let the workflow verify highlight count exactly without parsing
+English:
 
 ```json
 {
   "generated": true,
   "version": "<new version, e.g. 1.18>",
+  "added": <integer count of items new in this version>,
+  "changed": <integer count of items whose description/category changed>,
+  "removed": <integer count of items removed in this version>,
   "changes": "<one-line summary, e.g. 'added /foo skill, removed /bar'>",
   "message": "Cheatsheet v<new> — <N> changes: <list>. https://wdunlevy.github.io/claude-cheatsheet/latest.pdf"
 }
 ```
+
+`added + changed` must equal the number of `class="... new"` markers in
+`current.html` — the workflow asserts this. `removed` is informational.
+
+If you proceeded only because `Force regeneration: true` was set (no actual
+inventory diff), all three counts must be `0`.
 
 If you skipped at Step 2 (no changes), use the no-change shape from there.
 

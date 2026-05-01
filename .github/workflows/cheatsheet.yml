@@ -131,18 +131,21 @@ jobs:
           ls -la "$OUT" latest.pdf
 
       - name: Verify highlight count is sane
-        # Cheap sanity gate: if last-run says we had changes but the HTML has
-        # zero `new` classes, something went wrong — fail loudly instead of
-        # silently shipping un-highlighted output.
+        # Sanity gate: if items were added or changed, the same number of
+        # `new` classes must appear in the HTML. Pure removals and forced-
+        # no-op regenerations correctly have zero — and pass this gate.
+        # Reads structured counts from last-run.json (no English parsing).
         if: steps.result.outputs.generated == 'true'
-        env:
-          CHANGES: ${{ steps.result.outputs.changes }}
         run: |
           set -euo pipefail
+          ADDED=$(jq -r '.added // 0' last-run.json)
+          CHANGED=$(jq -r '.changed // 0' last-run.json)
+          EXPECTED=$(( ADDED + CHANGED ))
           NEW_COUNT=$(grep -cE 'class="(sk|kb|cli-item|note) new"' current.html || true)
-          echo "highlight count in current.html: $NEW_COUNT"
-          if [ "$CHANGES" != "none" ] && [ "$NEW_COUNT" -eq 0 ]; then
-            echo "::error::changes='$CHANGES' but no 'new' classes in HTML"
+          echo "expected highlights: $EXPECTED  (added=$ADDED changed=$CHANGED)"
+          echo "actual highlights:   $NEW_COUNT"
+          if [ "$EXPECTED" -gt 0 ] && [ "$NEW_COUNT" -ne "$EXPECTED" ]; then
+            echo "::error::expected $EXPECTED highlights but found $NEW_COUNT in current.html"
             exit 1
           fi
 
