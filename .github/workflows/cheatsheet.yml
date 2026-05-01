@@ -1,0 +1,183 @@
+# Daily cheatsheet regeneration.
+#
+# Why this workflow exists:
+# - The old launchd path on the Mac inconsistently updated `latest.pdf`,
+#   so the public URL (https://wdunlevy.github.io/claude-cheatsheet/latest.pdf)
+#   often served a stale version. From the user's perspective that looked like
+#   "the highlights never change."
+# - This workflow makes the contract deterministic: the skill produces HTML +
+#   snapshot + manifest, and the workflow renders the PDF, refreshes
+#   `latest.pdf`, and commits everything in one step.
+#
+# Auth: uses CLAUDE_CODE_OAUTH_TOKEN (Max subscription) via `claude setup-token`,
+# not a paid API key.
+
+name: Daily Cheatsheet
+
+on:
+  schedule:
+    # 10:00 UTC = 6am EDT (and 5am EST during winter — GitHub cron is fixed UTC,
+    # does not observe DST). Acceptable drift for a daily cheatsheet.
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regenerate even if no changes are detected"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write       # commit + push the new PDF
+  issues: write         # for the success notification (turns into an email)
+  id-token: write       # required by anthropics/claude-code-action
+
+concurrency:
+  group: cheatsheet
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install Chromium and jq
+        # ubuntu-latest ships google-chrome already, but install chromium as a
+        # stable fallback and jq for parsing last-run.json.
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq jq
+          if ! command -v google-chrome >/dev/null \
+             && ! command -v chromium-browser >/dev/null \
+             && ! command -v chromium >/dev/null; then
+            sudo apt-get install -y -qq chromium-browser
+          fi
+
+      - name: Generate HTML, snapshot, manifest
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            Read and follow the skill at .claude/skills/cheatsheet/SKILL.md
+            in the current working directory.
+
+            Force regeneration: ${{ inputs.force == true && 'true' || 'false' }}
+
+            Hard rules for this run:
+            - You are inside a GitHub Actions Ubuntu runner, NOT macOS.
+            - Do NOT render a PDF. Do NOT run Chrome. The workflow does that.
+            - Do NOT run git. The workflow stages, commits, and pushes.
+            - When updating current.html, FIRST strip every existing
+              class="sk new", "kb new", "cli-item new", and "note new" from
+              the file (e.g. with sed), THEN re-apply `new` classes only on
+              rows that changed in this version. Old highlights must not
+              carry forward.
+
+            Always write last-run.json with this exact shape so the workflow
+            can act on it:
+              {
+                "generated": true|false,
+                "version": "<current version>",
+                "changes": "<short summary, or 'none'>",
+                "message": "<full notification text>"
+              }
+          claude_args: |
+            --model claude-opus-4-7
+            --allowedTools Read,Write,Edit,Bash
+
+      - name: Read run result
+        id: result
+        run: |
+          set -euo pipefail
+          if [ ! -f last-run.json ]; then
+            echo "::error::Skill did not produce last-run.json"
+            exit 1
+          fi
+          GENERATED=$(jq -r .generated last-run.json)
+          VERSION=$(jq -r .version last-run.json)
+          CHANGES=$(jq -r .changes last-run.json)
+          # Only emit small, safe scalars as outputs. Long fields like
+          # `message` are read fresh from last-run.json in steps that need
+          # them, to avoid multiline-output delimiter pitfalls.
+          {
+            echo "generated=$GENERATED"
+            echo "version=$VERSION"
+            echo "changes=$CHANGES"
+          } >> "$GITHUB_OUTPUT"
+          echo "Result: generated=$GENERATED version=$VERSION"
+
+      - name: Render PDF and refresh latest.pdf
+        # THIS IS THE FIX for the staleness bug. `latest.pdf` is updated
+        # deterministically by the workflow, not by the LLM.
+        if: steps.result.outputs.generated == 'true'
+        env:
+          VERSION: ${{ steps.result.outputs.version }}
+        run: |
+          set -euo pipefail
+          if   command -v google-chrome      >/dev/null; then CHROME=google-chrome
+          elif command -v chromium-browser   >/dev/null; then CHROME=chromium-browser
+          else                                                CHROME=chromium
+          fi
+          OUT="Claude Code Reference v${VERSION}.pdf"
+          "$CHROME" --headless --no-sandbox --disable-gpu \
+            --no-pdf-header-footer \
+            --print-to-pdf="$OUT" \
+            "file://$PWD/current.html"
+          cp "$OUT" latest.pdf
+          ls -la "$OUT" latest.pdf
+
+      - name: Verify highlight count is sane
+        # Cheap sanity gate: if last-run says we had changes but the HTML has
+        # zero `new` classes, something went wrong — fail loudly instead of
+        # silently shipping un-highlighted output.
+        if: steps.result.outputs.generated == 'true'
+        env:
+          CHANGES: ${{ steps.result.outputs.changes }}
+        run: |
+          set -euo pipefail
+          NEW_COUNT=$(grep -cE 'class="(sk|kb|cli-item|note) new"' current.html || true)
+          echo "highlight count in current.html: $NEW_COUNT"
+          if [ "$CHANGES" != "none" ] && [ "$NEW_COUNT" -eq 0 ]; then
+            echo "::error::changes='$CHANGES' but no 'new' classes in HTML"
+            exit 1
+          fi
+
+      - name: Commit and push
+        if: steps.result.outputs.generated == 'true'
+        env:
+          VERSION: ${{ steps.result.outputs.version }}
+          CHANGES: ${{ steps.result.outputs.changes }}
+        run: |
+          set -euo pipefail
+          git config user.name "cheatsheet-bot"
+          git config user.email "cheatsheet-bot@users.noreply.github.com"
+          git add manifest.json snapshot.json current.html latest.pdf \
+                  "Claude Code Reference v${VERSION}.pdf"
+          git commit -m "v${VERSION}: ${CHANGES}"
+          git push
+
+      - name: Notify (open issue, which emails you)
+        if: steps.result.outputs.generated == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.result.outputs.version }}
+        run: |
+          set -euo pipefail
+          # Pass the message via --body-file so any special characters in the
+          # LLM-produced message can't be interpreted by the shell.
+          jq -r .message last-run.json > /tmp/notify-body.txt
+          printf '\n\nPDF: https://wdunlevy.github.io/claude-cheatsheet/latest.pdf\n' \
+            >> /tmp/notify-body.txt
+          gh issue create \
+            --title "Cheatsheet v${VERSION}" \
+            --body-file /tmp/notify-body.txt
+
+      - name: Log no-change days
+        if: steps.result.outputs.generated == 'false'
+        env:
+          VERSION: ${{ steps.result.outputs.version }}
+        run: echo "::notice::No changes today — v${VERSION} is current."
