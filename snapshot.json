@@ -354,6 +354,7 @@
     "--mcp-config",
     "--strict-mcp-config",
     "--plugin-dir",
+    "--plugin-url",
     "--tools",
     "--allowed-tools",
     "--disallowed-tools",
