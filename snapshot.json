@@ -384,6 +384,7 @@
     "--ide",
     "--exclude-dynamic-system-prompt-sections",
     "--include-hook-events",
+    "--remote-control",
     "--remote-control-session-name-prefix"
   ],
   "cliSubcommands": [
