@@ -151,6 +151,18 @@
       "desc": "Review code for reuse & clarity"
     },
     {
+      "name": "/run",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Launch app to see change working"
+    },
+    {
+      "name": "/verify",
+      "category": "Code Quality",
+      "color": "validate",
+      "desc": "Verify change by running the app"
+    },
+    {
       "name": "/frontend-design",
       "category": "Creative",
       "color": "create",
