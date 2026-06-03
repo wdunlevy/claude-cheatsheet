@@ -163,6 +163,12 @@
       "desc": "Verify change by running the app"
     },
     {
+      "name": "/deep-research",
+      "category": "Creative",
+      "color": "create",
+      "desc": "Multi-source cited research report"
+    },
+    {
       "name": "/frontend-design",
       "category": "Creative",
       "color": "create",
@@ -380,6 +386,7 @@
     "--json-schema",
     "--include-partial-messages",
     "--replay-user-messages",
+    "--prompt-suggestions",
     "--verbose",
     "--max-budget-usd",
     "--no-session-persistence",

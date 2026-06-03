@@ -1,1 +1,1 @@
-{"version": "1.21", "lastGenerated": "2026-05-20T11:09:56Z", "note": "Added /run and /verify skills"}
+{"version": "1.22", "lastGenerated": "2026-06-03T11:45:04Z", "note": "Added /deep-research skill and --prompt-suggestions CLI flag"}
