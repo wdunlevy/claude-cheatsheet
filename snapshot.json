@@ -381,6 +381,7 @@
     "--dangerously-skip-permissions",
     "--allow-dangerously-skip-permissions",
     "--bare",
+    "--safe-mode",
     "--output-format",
     "--input-format",
     "--json-schema",
