@@ -389,6 +389,7 @@
     "--replay-user-messages",
     "--prompt-suggestions",
     "--verbose",
+    "--ax-screen-reader",
     "--max-budget-usd",
     "--no-session-persistence",
     "--from-pr",
