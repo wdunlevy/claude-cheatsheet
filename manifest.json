@@ -1,1 +1,1 @@
-{"version": "1.25", "lastGenerated": "2026-06-24T00:00:00Z", "note": "Added --bg/--background CLI flag"}
+{"version": "1.26", "lastGenerated": "2026-06-27T00:00:00Z", "note": "Added claude gateway subcommand"}

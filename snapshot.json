@@ -414,6 +414,7 @@
     "claude auth",
     "claude auto-mode",
     "claude doctor",
+    "claude gateway",
     "claude install",
     "claude mcp",
     "claude plugin",
