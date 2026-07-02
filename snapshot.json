@@ -163,6 +163,12 @@
       "desc": "Verify change by running the app"
     },
     {
+      "name": "/dataviz",
+      "category": "Creative",
+      "color": "create",
+      "desc": "Chart & dashboard design system"
+    },
+    {
       "name": "/deep-research",
       "category": "Creative",
       "color": "create",
