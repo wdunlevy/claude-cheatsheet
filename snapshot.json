@@ -413,6 +413,7 @@
     "--exclude-dynamic-system-prompt-sections",
     "--include-hook-events",
     "--forward-subagent-text",
+    "--autocompact",
     "--remote-control",
     "--remote-control-session-name-prefix"
   ],
