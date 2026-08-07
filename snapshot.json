@@ -415,7 +415,10 @@
     "--forward-subagent-text",
     "--autocompact",
     "--remote-control",
-    "--remote-control-session-name-prefix"
+    "--remote-control-session-name-prefix",
+    "--cloud",
+    "--environment",
+    "--teleport"
   ],
   "cliSubcommands": [
     "claude agents",
