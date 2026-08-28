@@ -418,7 +418,8 @@
     "--remote-control-session-name-prefix",
     "--cloud",
     "--environment",
-    "--teleport"
+    "--teleport",
+    "--restricted"
   ],
   "cliSubcommands": [
     "claude agents",
