@@ -423,16 +423,21 @@
   ],
   "cliSubcommands": [
     "claude agents",
+    "claude attach",
     "claude auth",
     "claude auto-mode",
     "claude doctor",
     "claude gateway",
     "claude import",
     "claude install",
+    "claude logs",
     "claude mcp",
     "claude plugin",
     "claude project",
+    "claude respawn",
+    "claude rm",
     "claude setup-token",
+    "claude stop",
     "claude ultrareview",
     "claude update"
   ]
