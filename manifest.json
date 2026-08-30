@@ -1,1 +1,1 @@
-{"version": "1.33", "lastGenerated": "2026-08-29T00:00:00Z", "note": "Added background-session subcommands: attach, logs, respawn, rm, stop"}
+{"version": "1.34", "lastGenerated": "2026-08-30T00:00:00Z", "note": "Added /workflow-authoring skill (Automation)"}

@@ -241,6 +241,12 @@
       "desc": "Create Agent SDK app"
     },
     {
+      "name": "/workflow-authoring",
+      "category": "Automation",
+      "color": "create",
+      "desc": "Write Workflow tool scripts"
+    },
+    {
       "name": "/loop",
       "category": "Automation",
       "color": "ship",
