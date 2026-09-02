@@ -380,6 +380,7 @@
     "--file",
     "--system-prompt",
     "--append-system-prompt",
+    "--system-prompt-snapshot",
     "--settings",
     "--setting-sources",
     "--mcp-config",
