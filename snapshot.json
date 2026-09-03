@@ -392,6 +392,7 @@
     "--disallowed-tools",
     "--disable-slash-commands",
     "--permission-mode",
+    "--permission-prompts",
     "--dangerously-skip-permissions",
     "--allow-dangerously-skip-permissions",
     "--bare",
