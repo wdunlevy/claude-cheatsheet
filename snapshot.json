@@ -383,6 +383,7 @@
     "--system-prompt-snapshot",
     "--settings",
     "--setting-sources",
+    "--client-data-url",
     "--mcp-config",
     "--strict-mcp-config",
     "--plugin-dir",
