@@ -241,6 +241,12 @@
       "desc": "Create Agent SDK app"
     },
     {
+      "name": "/plugin-authoring",
+      "category": "Automation",
+      "color": "create",
+      "desc": "Write Claude Code hook plugins"
+    },
+    {
       "name": "/workflow-authoring",
       "category": "Automation",
       "color": "create",
