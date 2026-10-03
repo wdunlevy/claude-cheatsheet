@@ -1,1 +1,1 @@
-{"version": "1.39", "lastGenerated": "2026-10-02T00:00:00Z", "note": "Added /plugin-authoring skill"}
+{"version": "1.40", "lastGenerated": "2026-10-03T00:00:00Z", "note": "Added claude purge subcommand; removed --client-data-url flag and claude project subcommand"}
